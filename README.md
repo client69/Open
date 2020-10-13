@@ -1,5 +1,5 @@
 # [Hacktober-Open](https://client69.github.io/Hacktober-Open/)
-## Any type of open source code or program is accepted. <br> I will merge it with hacktoberfest-accepted label
+## You can add some good algorithms (in any language) which can be helpful for competitive programmers. <br> I will merge it with hacktoberfest-accepted label
 
 ## How to contribute
 1) Fork this repo by clicking the fork button on the top right.
