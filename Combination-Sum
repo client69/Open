@@ -1,0 +1,41 @@
+class Solution {
+public:
+    
+    void helper(vector<int> c,int t,vector<vector<int>> &vec,vector<int> &v,int s){
+        
+        if(s>t) {
+            return ;
+        }           
+        
+        if(s==t){
+            cout<<" "<<s;
+            vector<int> vv;
+            vv=v;
+            sort(vv.begin(),vv.end());
+            
+        vector<vector<int>>::iterator it; 
+           it = find (vec.begin(), vec.end(), vv); 
+           if (it == vec.end()) 
+            vec.push_back(vv);
+            
+            return ;
+        }
+        for(int i=0;i<c.size();i++){
+            v.push_back(c[i]);
+            helper(c,t,vec,v,s+c[i]);
+           // if(v.size()>0)
+            v.pop_back();
+        }
+      //  if(v.size()>0)
+      //  v.pop_back();
+    }
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+       vector<vector<int>> vec;
+        vector<int> v;
+        
+        helper(candidates,target,vec,v,0);
+        return vec;
+        
+        
+    }
+};
