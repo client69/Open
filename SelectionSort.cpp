@@ -1,12 +1,13 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
-void swap(int &a, int &b) 
+//you can directly use stl swap for swapping it will make your code more functioning
+/*void swap(int &a, int &b) 
 {  int temp;
    temp = a;
    a = b;
    b = temp;
-}
+} */
 
 void display(int *arr, int n) {
    for(int i = 0; i<n; i++)
