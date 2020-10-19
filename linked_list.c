@@ -104,11 +104,6 @@ int main (void) {
     printList(list);
     printf("Lenght: %d\n\n", size(list)); 
 
-    removeBack(list);
-    printList(list);
-    printf("Lenght: %d\n\n", size(list)); 
-
-    if(isEmpty(list)) printf("Empty list\n");
     printf("Final Lenght: %d\n\n", size(list)); 
     return 0;
 }
