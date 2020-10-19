@@ -7,9 +7,13 @@ def factorial(x):
     return p
 
 def isprime(n):
-    if type(n)!= int or n<1:
+    try:
+        n=int(n)
+    except ValueError:
         return None
-    if n==1:
+    if n<1:
+        return None
+    elif n==1:
         return False
     for i in range(n+1):
         if n-i<i:
