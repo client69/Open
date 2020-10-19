@@ -69,3 +69,48 @@ int main()
     delete[] edges;
     return 0;
 }
+// i have made a quite simple algorithm 
+#include<bits/stdc++.h>
+using namespace std;
+#define n 6
+int minvertex(vector<int>&value,vector<bool> &mst){
+    int min=INT_MAX;
+    int vertex;
+    for(int i=0;i<n;i++){
+        if(mst[i]==false && value[i]<min){
+            min=value[i];
+            vertex=i;
+        }
+    }
+    return vertex;
+}
+void find(int graph[n][n]){
+   vector<bool>mst(n,false);
+    vector<int>value(n,INT_MAX);
+    int parent[n]={-1};
+    parent[0]=-1;
+    value[0]=0;
+    for(int i=0;i<n-1;i++){
+        int u=minvertex(value,mst);
+        mst[u]=true;
+        for(int j=0;j<n;j++){
+            if(graph[u][j]!=0 && mst[j]==false && graph[u][j]<value[j]){
+                value[j]=graph[u][j];
+                parent[j]=u;
+            }
+        }
+    }
+    for(int i=0;i<n;i++){
+        cout<<"U->V: "<<parent[i]<<"->"<<i<<"  wt = "<<graph[parent[i]][i]<<"\n";
+    }
+}
+int main(){
+    int mat[n][n]={ {0, 4, 6, 0, 0, 0},
+						{4, 0, 6, 3, 4, 0},
+						{6, 6, 0, 1, 8, 0},
+						{0, 3, 1, 0, 2, 3},
+						{0, 4, 8, 2, 0, 7},
+						{0, 0, 0, 3, 7, 0} };
+        
+            find(mat);
+}
