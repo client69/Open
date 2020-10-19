@@ -1,15 +1,15 @@
 /* C++ implementation of QuickSort */
 #include <bits/stdc++.h> 
 using namespace std; 
-
-// A utility function to swap two elements 
+//there is nno need of swap function seprately there is inbuilt stl swap function you have to just write the swap word and enter the value you want to swap//
+/*// A utility function to swap two elements 
 void swap(int* a, int* b) 
 { 
 	int t = *a; 
 	*a = *b; 
 	*b = t; 
 } 
-
+*/
 /* This function takes last element as pivot, places 
 the pivot element at its correct position in sorted 
 array, and places all smaller (smaller than pivot) 
@@ -26,10 +26,10 @@ int partition (int arr[], int low, int high)
 		if (arr[j] < pivot) 
 		{ 
 			i++; // increment index of smaller element 
-			swap(&arr[i], &arr[j]); 
+			swap(arr[i], arr[j]); //like this you can swap it therre is no need to define function seprately
 		} 
 	} 
-	swap(&arr[i + 1], &arr[high]); 
+	swap(arr[i + 1], arr[high]); 
 	return (i + 1); 
 } 
 
