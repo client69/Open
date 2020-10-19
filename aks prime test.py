@@ -1,4 +1,4 @@
-#AKS prime test is the fastest deterministic prime test as of now, it executes in polynomial time, useful for big primes
+#AKS prime test a deterministic prime test, it executes in polynomial time, useful for really big primes
 
 def factorial(x):
     p=1
