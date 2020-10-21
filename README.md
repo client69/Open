@@ -8,7 +8,7 @@
     git clone https:/github.com/<your-username>/<repo-name>.git
 ```
 3) Add your algorithm/program file in the local repo on your machine.
-4) Run this command for add your file in the repo.
+4) Run this command to add your file to the repo.
 ```
     git add YourFile.extension
 ```
