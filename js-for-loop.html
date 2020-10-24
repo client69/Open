@@ -1,0 +1,45 @@
+<html>
+<title></title>
+<head>
+</head>
+<script>
+function forLoop()
+{
+var i;
+alert("1 to 10 loop start");
+for(i=1;i<=10;i++)
+{
+alert("hello " + i);
+}
+alert("1 to 10 loop end");
+}
+
+function forLoopReverse()
+{
+var i;
+alert("10 to 1 loop start");
+for(i=10;i>=1;i--)
+{
+alert("hello " + i);
+}
+alert("10 to 1 loop end");
+}
+
+function forLoopStepForward()
+{
+var i;
+alert("0 to 30 loop start step forward 5");
+for(i=0;i<=30;i= i+5)
+{
+alert("hello " + i);
+}
+alert("0 to 30 loop end");
+}
+
+</script>
+<body>
+<input id="forloop" type="button" value="print 1 to 10" onclick="forLoop()">
+<input id="forloopreverse" type="button" value="print 10 to 1" onclick="forLoopReverse()">
+<input id="forloopstepforward" type="button" value="print 1 to 30 step forward 5" onclick="forLoopStepForward()">
+</body>
+</html>
