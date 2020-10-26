@@ -1,0 +1,25 @@
+<html>
+   <head>
+      <title></title>
+      <script>
+	  function oddeven(){
+	  var number = document.getElementById("txtfirstnumber").value;
+	  var numbertoCheck=parseInt(number)
+            var lblresult = document.getElementById("lblresult");
+		
+			if(numbertoCheck % 2 == 0){
+			lblresult.innerHTML="entered number is even number"
+			}
+			else{
+			lblresult.innerHTML="entered number is odd number"}
+			}
+	  </script>
+   </head>
+   <body>
+      <span>Enter the number:</span>
+      <input id="txtfirstnumber" type="text" >
+      <br><br>
+      <input type="button" value="select" onclick="oddeven()">
+      <br><br>
+      <span>result:</span><label id="lblresult">
+   </body>
