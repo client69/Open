@@ -1,0 +1,22 @@
+<html>
+<head>
+<title></title>
+<script>
+function showHeaderText()
+{
+var name = document.getElementById("headerText");
+var name = document.getElementById("secheaderText");
+headerText.style.color = "red";
+headerText.style.backgroundColor = "blue";
+secheaderText.innerHTML=headerText.innerHTML;
+headerText.innerHTML="";
+
+}
+
+</script>
+</head>
+<body>
+<h1 id="headerText">Header h1 text</h1>
+<h2 id="secheaderText">H2</h2>
+<input type="button" value="click here" onclick="showHeaderText()">
+</body>
