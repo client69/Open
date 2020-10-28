@@ -1,0 +1,46 @@
+<html>
+<head>
+<title></title>
+<style>
+#firstdiv{
+width:30%;
+height:50%;
+background-color:pink;
+border:1px solid blue;
+font-size:20px;
+}
+</style>
+<script>
+function onMouseoverEffect()
+{
+var div = document.getElementById("firstdiv");
+div.style.Color="blue";
+div.style.fontSize="30px";
+div.style.backgroundColor="red";
+
+
+}
+function onMouseoutEffect()
+{
+var div = document.getElementById("firstdiv");
+div.style.Color="red";
+div.style.fontSize="40px";
+div.style.backgroundColor="yellow";
+
+
+}
+function onMouseclickEffect()
+{
+var div = document.getElementById("firstdiv");
+div.style.Color="black";
+div.style.fontSize="50px";
+div.style.backgroundColor="blue";
+
+
+}
+</script>
+
+</head>
+<body>
+<div id="firstdiv" onmouseover="onMouseoverEffect()" onmouseout="onMouseoutEffect()" onclick="onMouseclickEffect()">This is a demo divison</div>
+</body>
