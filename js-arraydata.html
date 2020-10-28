@@ -1,0 +1,28 @@
+<html>
+<head></head>
+<script>
+function showArrayData()
+{
+var arrayData=[10,20,30,40,50];
+alert("length of the array is "+arrayData.length);
+alert("at index 0 "+arrayData[0]);
+alert("at index 4 "+arrayData[4]);
+alert("at index 2 "+arrayData[2]);
+alert("at index 1 "+arrayData[1]);
+arrayData[2]=47;
+alert("updated index 2 "+arrayData[2])
+alert("at index 3 "+arrayData[3]);
+var lblArraydata = document.getElementById(lblarraydata);
+for(var i=arrayData[0];i<=arrayData[4];i++)
+{
+lblArraydata.innerHTML= arrayData ;
+}
+
+}
+</script>
+
+<body>
+<input id="arrayData" type="button" value="Array Data" onclick="showArrayData()">
+<label id="lblarraydata"></label>
+</body>
+</html>
