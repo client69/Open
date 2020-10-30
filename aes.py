@@ -1,16 +1,3 @@
-#!/usr/bin/python
-#
-# aes.py: implements AES - Advanced Encryption Standard
-# from the SlowAES project, http://code.google.com/p/slowaes/
-#
-# Copyright (c) 2008    Josh Davis ( http://www.josh-davis.org ),
-#           Alex Martelli ( http://www.aleax.it )
-#
-# Ported from C code written by Laurent Haan ( http://www.progressive-coding.com )
-#
-# Licensed under the Apache License, Version 2.0
-# http://www.apache.org/licenses/
-#
 import os
 import sys
 import math
