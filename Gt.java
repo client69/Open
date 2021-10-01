@@ -49,7 +49,8 @@ public class Gt {
     public static int size(Node root){
         int s=0;
 
-        for(Node child:root.children) s+=size(child);
+        for(Node child:root.children) 
+            s+=size(child);
 
         return s+1;
     }
@@ -100,6 +101,7 @@ public class Gt {
             i--;
             j--;
         }
+        
         i++;
         System.out.println(ntra.get(i).data);
     }
