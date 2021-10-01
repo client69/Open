@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 
 class Node{
@@ -9,8 +8,7 @@ class Node{
     Node* right=nullptr;
     int bal=0;
     int h=0;
-    //
-
+   
     Node(int data){
         this->data=data;
     }
