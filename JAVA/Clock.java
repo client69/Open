@@ -1,3 +1,4 @@
+package JAVA;
 //An algorithm which takes in time in 24 hour format and displays it in 12hour format(AM/PM)
 //for example: 15hr 125mins 69secs will be calculated and displayed as  5:6:9 PM
 
