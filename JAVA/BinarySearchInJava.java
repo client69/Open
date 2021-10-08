@@ -1,3 +1,4 @@
+package JAVA;
 //import java.io.*;
 import java.util.*; 
 class BinarySearchInJava { 
