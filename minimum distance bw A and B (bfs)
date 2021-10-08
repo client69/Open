@@ -1,0 +1,110 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isvalid(vector<vector < char>> &matrix, int i, int j)
+{
+	int r = matrix.size();
+	int c = matrix[0].size();
+	if (i >= 0 && i < r && j >= 0 && j < c && (matrix[i][j] == '.'||matrix[i][j]=='B'))
+	{
+		return true;
+	}
+	return false;
+}
+
+int dx[4] = { -1, 1, 0, 0 };	// U D L R
+int dy[4] = { 0, 0, -1, 1 };
+
+string bfs(vector<vector < char>> &matrix, vector< vector< bool>> &visited, int i, int j)
+	{
+		visited[i][j] = true;
+		queue<pair<pair<int, int>, string>> q;
+
+		q.push({{i, j}, "" });
+		while (q.size())
+		{
+			auto rem = q.front();
+			q.pop();
+			int oldx = rem.first.first;
+			int oldy = rem.first.second;
+			string temp = rem.second;
+            // cout<<oldx<<" "<<oldy<<" "<<temp<<endl;
+			 if (matrix[oldx][oldy] == 'B')
+            {
+                           return temp;
+            }		
+				for (int k = 0; k < 4; k++)
+				{
+					int nx = oldx + dx[k];
+					int ny = oldy + dy[k];
+                  
+					if (isvalid(matrix, nx, ny) && visited[nx][ny] == false)
+					{
+                         
+                        string t;
+						if (k == 0)
+						{
+							t =temp+ 'U';
+							q.push({{nx, ny}, t });
+						}
+						else if (k == 1)
+						{
+						t =temp+ 'D';
+							q.push({{nx, ny}, t });
+						}
+						else if (k == 2)
+						{
+							t =temp+ 'L';
+							q.push({{nx, ny}, t });
+						}
+						else if (k == 3)
+						{
+						t =temp+ 'R';
+							q.push({{nx, ny}, t});
+						}
+						visited[nx][ny] = true;
+					}
+			}
+		}
+        return "NO";
+    }
+		int main()
+		{
+			int n, m;
+			cin >> n >> m;
+			vector<vector < char>> matrix(n, vector<char> (m));
+			int sx=-1, sy=-1;
+			for (int i = 0; i < n; i++)
+			{
+				for (int j = 0; j < m; j++)
+				{
+					cin >> matrix[i][j];
+					if (matrix[i][j] == 'A')
+					{
+						sx = i;
+						sy = j;
+					}
+				}
+			}
+
+            if(sx==-1 || sy==-1)
+            {
+                cout<<"NO"<<endl;
+                return 0;
+            }
+            cout<<"sx "<<sx<<" sy "<<sy<<endl;
+			vector<vector < bool>> visited(n, vector<bool> (m, false));
+			
+            string ans = bfs(matrix, visited, sx, sy);
+            if(ans=="NO")
+            {
+			     cout << ans<< endl;;
+            }
+            else
+            {
+                cout<<"YES"<<endl;
+                cout<<ans.length()<<endl;
+                cout<<ans<<endl;
+            }
+
+		}
