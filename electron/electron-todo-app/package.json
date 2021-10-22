@@ -1,0 +1,55 @@
+{
+  "name": "electron-todo-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.todo_app",
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^6.3.0",
+    "electron-is-dev": "^2.0.0",
+    "nedb": "^1.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "wait-on": "^6.0.0",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "release": "react-scripts build && electron-builder --publish=always",
+    "start": "concurrently \"SET BROWSER=none && npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^13.2.1",
+    "electron-builder": "^22.13.1"
+  }
+}
