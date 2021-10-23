@@ -1,0 +1,91 @@
+body {
+  background-color: #282c34;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  flex-flow: row;
+  align-items: center;
+  margin-top: 5vh;
+  width: 100%;
+  color: white;
+}
+
+.formContainer .inputTODO {
+  height: 25px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: green 2px solid;
+  color: white;
+  transition: 0.5s ease;
+}
+.formContainer .inputTODO:focus {
+  border: green 1px solid;
+  transform: scaleX(1.3);
+}
+
+.formContainer .addItem {
+  display: inline-block;
+  width: 100px;
+  height: 28px;
+
+  background-color: #0069ed;
+  border-radius: 5px;
+  /* padding: 1rem 2rem; */
+  /* border: 1px solid white; */
+  border: none;
+  margin-left: 50px;
+}
+
+.items-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 70vw;
+  margin-top: 5%;
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 1%;
+  background-color: rgb(92, 0, 128);
+  border-radius: 6px;
+  border: none;
+  padding: 4px;
+}
+
+.item .title {
+  color: white;
+  left: 0;
+  /* position: absolute; */
+}
+.item .date {
+  color: white;
+  right: 0;
+  /* position: absolute; */
+}
+
+.item .delete {
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: 15px;
+}
