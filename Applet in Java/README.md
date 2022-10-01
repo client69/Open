@@ -16,5 +16,5 @@
     </ol>
     <h3>👩 Created by</h3>
     <p>Created with 🤍 by Madhavi Sonawane. <br>
-    <br><b>Thank You🙏<b> for visiting this page...!!</p>
+    <br><b>Thank You🙏 for visiting this page...!!</p>
 </html>
