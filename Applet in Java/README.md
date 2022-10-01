@@ -1,5 +1,6 @@
 <html>
     <h1 align="center">Applets in Java</h1>
+    <h3>📍 About the code?</h3>
     <p>This is the 1st program for applet in java.<br> In this program smiley🙂 is created.</p>
     <h3>📍 Requirements to run the code</h3>
     <ol>
