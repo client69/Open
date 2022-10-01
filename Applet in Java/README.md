@@ -1,6 +1,6 @@
 <html>
     <h1 align="center">Applets in Java</h1>
-    <p>This is the 1st program for applet in java. In this program smiley🙂 is created.</p>
+    <p>This is the 1st program for applet in java.<br> In this program smiley🙂 is created.</p>
     <h3>📍 Requirements to run the code</h3>
     <ol>
         <li>You need any version of JDK downloaded in your system.</li>
@@ -13,5 +13,5 @@
         <li>Type <b>javac filename.java</b> to compile the code</li>
         <li>Type <b>appletviewer filename.java</b> to run the code</li>
     </ol>
-    <h4>Thank You...!!</h4>
+    <h4>Thank You...!!🙏</h4>
 </html>
