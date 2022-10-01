@@ -10,10 +10,10 @@
     <h3>❓ How to run the code?</h3>
     <ol>
         <li>Open command prompt</li>
-        <li>Type the address where you save the code as cd filepath</li>
+        <li>Type the path(address of file) where you save the code as - cd filepath</li>
         <li>Type <b>javac filename.java</b> to compile the code</li>
         <li>Type <b>appletviewer filename.java</b> to run the code</li>
     </ol>
     <h3>👩 Created by</h3>
-    <h4>Created with 🤍 by Madhavi Sonawane. <br>Thank You...!!🙏</h4>
+    <p>Created with 🤍 by Madhavi Sonawane. <br><br>Thank You...!!🙏</p>
 </html>
