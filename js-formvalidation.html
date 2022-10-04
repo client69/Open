@@ -1,0 +1,82 @@
+<html>
+<title></title>
+<head>
+<style>
+ body {
+            padding-left: 200px;
+            padding-top: 30px;
+        }
+		
+	.formdiv{
+	border:1px solid red;
+	width:400px;
+	padding:20px;
+	}	
+		</style>
+
+</head>
+<script>
+ function formValidation() {
+ var name = document.getElementById("txtName").value;
+ var email = document.getElementById("emailName").value;
+ var phone = document.getElementById("PhoneNo").value;
+ var pan = document.getElementById("pancard").value;
+ var lblName = document.getElementById("lblName");
+ var lblEmail = document.getElementById("lblEmail");
+ var lblPhone = document.getElementById("lblPhone");
+ var lblPan = document.getElementById("lblPan");
+ 
+ if(name == "")
+ {
+ lblName.innerHTML = "Please enter your name";
+ lblName.style.color="red";
+}
+
+if(email == "")
+{
+ lblEmail.innerHTML = "Please enter your email";
+ lblEmail.style.color="red";
+}
+if(phone == "")
+{
+ lblPhone.innerHTML = "Please enter your PhoneNo";
+ lblPhone.style.color="red";
+}
+if(pan == "")
+{
+ lblPan.innerHTML = "Please enter your pancard";
+ lblPan.style.color="red";
+}
+
+}
+
+</script>
+<body>
+<div class="formdiv">
+<span>Name</span>
+<input id="txtName" type="text">
+<br>
+<label id="lblName"></label>
+<br>
+<br>
+<span>Email</span>
+<input id="emailName" type="email">
+<br>
+<label id="lblEmail"></label>
+<br>
+<br>
+<span>phone</span>
+<input id="PhoneNo" type="text">
+<br>
+<label id="lblPhone"></label>
+<br>
+<br>
+<span>Pan Card</span>
+<input id="pancard" type="text">
+<br>
+<label id="lblPan"></label>
+<br>
+<input id="submitButton" type="button" value="Submit" onclick="formValidation()">
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+var myArray = [["Maya-He", 420], ["Maya-Ho", 69]];
+
+var removedFromMyArray = myArray.shift();
