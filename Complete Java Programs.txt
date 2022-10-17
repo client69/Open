@@ -1,0 +1,3716 @@
+--------------------------------------------------
+1.Print Hello World Program
+--------------------------------------------------
+
+    public class HelloWorld {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		//Statement which prints Hello World on Console
+		System.out.println("Hello World");
+	}
+}
+
+
+1.Program Output:
+----------------
+Hello World
+
+--------------------------------------------------
+2.For Loop Example
+--------------------------------------------------
+
+public class ForLoopExample {
+
+	public static void main(String[] args) {
+
+		System.out.println("For Loop Example: ");
+		
+		int[] intArray = { 1,2,3,4,5 };
+		for(int i=0; i<intArray.length;i++)
+			System.out.println(intArray[i]);
+	}
+
+}
+
+
+2.Program Output:
+----------------
+For Loop Example:  
+1 
+2 
+3 
+4 
+5 
+
+--------------------------------------------------
+3.For Each Loop Example
+--------------------------------------------------
+
+public class ForEachLoopExample {
+
+	public static void main(String[] args) {
+
+		System.out.println("For Each Loop Example: ");
+
+		int[] intArray = { 1,2,3,4,5 };
+		
+		for(int i : intArray)
+			System.out.println(i);
+	}
+
+}
+
+
+3.Program Output:
+----------------
+For Each Loop Example:  
+1 
+2 
+3 
+4 
+5 
+
+--------------------------------------------------
+4.While Loop Example
+--------------------------------------------------
+
+public class WhileLoopExample {
+
+	public static void main(String[] args) {
+		
+		int i=1;
+		System.out.println("While Loop Demo");
+		while(i<=10){
+			System.out.println(i);
+			i++;
+		}
+	}
+
+}
+
+
+
+4.Program Output:
+----------------
+While Loop Demo 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 
+
+--------------------------------------------------
+5.DoWhile Loop Example
+--------------------------------------------------
+
+public class DoWhileLoopExample {
+
+	public static void main(String[] args) {
+
+		int i=1;
+		do{
+			System.out.println("Do While Loop Example");
+			
+		}while(i<1);
+	}
+
+}
+
+
+
+5.Program Output:
+----------------
+Do While Loop Example 
+
+--------------------------------------------------
+6.Switch Case/Statement Example
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class SwitchCaseExample {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter one digit from 0 to 6: ");
+		int num = input.nextInt();
+
+		switch(num) {
+		case 0:
+			System.out.println("Your Lucky Day is Sunday");
+			break;
+		case 1:
+			System.out.println("Your Lucky Day is Monday");
+			break;
+		case 2:
+			System.out.println("Your Lucky Day is Tuesday");
+			break;
+		case 3:
+			System.out.println("Your Lucky Day is Wednesday");
+			break;
+		case 4:
+			System.out.println("Your Lucky Day is Thursday");
+			break;
+		case 5:
+			System.out.println("Your Lucky Day is Friday");
+			break;
+		case 6:
+			System.out.println("Your Lucky Day is Saturday");
+			break;
+		default:
+			System.out.println("Please select the right option");
+			break;
+		}
+	}
+
+}
+
+
+6.Program Output:
+----------------
+Enter one digit from 0 to 6:  
+0 
+Your Lucky Day is Sunday  
+
+--------------------------------------------------
+7.Enum Example
+--------------------------------------------------
+
+enum Colour {
+	Black,White,Red,Green,Yellow,Grey
+}
+
+public class EnumExample {
+
+	public static void main(String[] args) {
+
+		Colour colour;
+
+		colour = Colour.Black;
+
+		System.out.println("Selected "+colour+" Colour");
+
+		colour = Colour.Yellow;
+
+		System.out.println("Selected "+colour+" Colour");
+	}
+
+}
+
+
+7.Program Output:
+----------------
+Selected Black Colour 
+Selected Yellow Colour 
+
+--------------------------------------------------
+8.Break Statement Example
+--------------------------------------------------
+
+public class BreakStatement {
+
+	public static void main(String[] args) {
+
+		for(int i=1;i<10;i++) {
+			System.out.println("i="+i);
+			if(i==4)	{
+				System.out.println("Break statement executes and loop breaks when i value is equal to 4");
+				break;
+			}
+		}
+	}
+
+}
+
+
+8.Program Output:
+----------------
+i=1 
+i=2 
+i=3 
+i=4 
+Break statement executes and loop breaks when i value is equal to 4 
+
+--------------------------------------------------
+9.print message without using system.out.println
+--------------------------------------------------
+
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+
+public class PrintMsgWithOutSysOut {
+
+	public static void main(String[] args) throws IOException {
+
+		System.out.write("Java Programs App \n".getBytes());
+		System.out.format("%s", "Java Programs App \n");
+		PrintStream printStream =  new PrintStream(new FileOutputStream(FileDescriptor.out));
+		printStream.print("Java Programs App \n");
+		System.err.print("Error message");
+
+	}
+
+}
+
+9.Program Output:
+----------------
+Java Programs App  
+Java Programs App  
+Java Programs App  
+Error message
+
+--------------------------------------------------
+10.convert binary to decimal number in java without using Integer.parseInt() method
+--------------------------------------------------
+
+import java.util.Scanner;
+
+//convert binary to decimal number in java without using Integer.parseInt() method.
+
+public class BinaryToDecimalWithOutParseInt {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner( System.in );
+		System.out.println("Enter a binary number: ");
+
+		int  binarynum =input.nextInt();
+		int binary=binarynum;
+
+		int decimal = 0;
+		int power = 0;
+
+		while(true){
+
+			if(binary == 0){
+
+				break;
+
+			} else {
+
+				int temp = binary%10;
+				decimal += temp*Math.pow(2, power);
+				binary = binary/10;
+				power++;
+
+			}
+		}
+		System.out.println("Binary="+binarynum+" Decimal="+decimal); ;
+	}
+
+}
+
+
+10.Program Output:
+----------------
+Enter a binary number:  
+1010 
+Binary=1010 Decimal=10
+
+--------------------------------------------------
+11.convert binary to decimal number in java using Integer.parseInt() method
+--------------------------------------------------
+
+import java.util.Scanner;
+
+//convert binary to decimal number in java using Integer.parseInt() method.
+
+public class BinaryToDecimalWithParseInt {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner( System.in );
+
+		System.out.println("Enter a binary number: ");
+		String binaryString =input.nextLine();
+
+		System.out.println("Result: "+Integer.parseInt(binaryString,2));
+	}
+
+}
+
+
+11.Program Output:
+----------------
+Enter a binary number:  
+1010 
+Result: 10
+
+--------------------------------------------------
+12.Convert Integer to Binary
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class IntegerToBinary {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner( System.in );
+
+		System.out.println("Enter Integer: ");
+		String integerString =input.nextLine();
+
+		System.out.println("Binary Number: "+Integer.toBinaryString(Integer.parseInt(integerString)));
+	}
+
+}
+
+
+12.Program Output:
+----------------
+Enter Integer:  
+10 
+Binary Number: 1010
+
+--------------------------------------------------
+13.Find the greatest among two numbers
+--------------------------------------------------
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class FindGreaterNumber {
+
+	/**
+	 * 
+	 * @param args
+	 * @throws IOException
+	 */
+	public static void main(String[] args) throws IOException {
+
+		int number1,number2;  
+
+		InputStreamReader read = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(read);
+
+		System.out.println("Enter the 1st number");
+
+		number1 = Integer.parseInt(in.readLine());
+
+		System.out.println("Enter the 2nd number");
+
+		number2 = Integer.parseInt(in.readLine());
+
+
+		if(number1 > number2)
+			System.out.println(number1+" is greater than "+number2);
+		else
+			System.out.println(number2+" is greater than "+number1);
+	}
+}
+
+
+13.Program Output:
+----------------
+Enter the 1st number 
+44 
+Enter the 2nd number 
+12 
+44 is greater than 12
+
+--------------------------------------------------
+14.List Odd Numbers From 1 to N
+--------------------------------------------------
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ListOddNumbers {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 * @throws NumberFormatException 
+	 */
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
+		 //define the limit
+        int limit;
+        
+        System.out.println("Enter the Limit:");
+        
+		InputStreamReader read = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(read);
+
+		limit = Integer.parseInt(in.readLine());
+       
+        System.out.println("Printing Odd numbers from 1 and " + limit);
+       
+        for(int i=1; i < = limit; i++){
+               
+                //if the number is not divisible by 2 then it is odd
+                if( i % 2 != 0){
+                        System.out.print(i + " ");
+                }
+        }
+	}
+
+}
+
+14.Program Output:
+----------------
+Enter the Limit: 
+10 
+Printing Odd numbers from 1 and 10 
+1 3 5 7 9
+
+--------------------------------------------------
+15.List Even Numbers From 1 to N
+--------------------------------------------------
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ListEvenNumbers {
+
+	/**
+	 * 
+	 * @param args
+	 * @throws NumberFormatException
+	 * @throws IOException
+	 */
+	public static void main(String[] args) throws NumberFormatException, IOException {
+
+		//define the limit
+		int limit;
+
+		System.out.println("Enter the Limit:");
+
+		InputStreamReader read = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(read);
+
+		limit = Integer.parseInt(in.readLine());
+
+		System.out.println("Printing Even numbers from 1 and " + limit);
+
+		for(int i=1; i <= limit; i++){
+
+			//if the number is divisible by 2 then it is even
+			if( i % 2 == 0){
+				System.out.print(i + " ");
+			}
+		}
+	}
+
+}
+
+
+15.Program Output:
+----------------
+Enter the Limit: 
+10 
+Printing Even numbers from 1 and 10 
+2 4 6 8 10  
+
+--------------------------------------------------
+16.Swap values stored in variable using temp variable
+--------------------------------------------------
+
+public class SwapTwoNumbers {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int num1 = 10;
+		int num2 = 20;
+
+		System.out.println("Before Swapping");
+		System.out.println("Value stored in variable num1 :" + num1);
+		System.out.println("Value stored in variable num2 :" + num2);
+
+		//swap the values
+		swap(num1, num2);
+
+	}
+
+	private static void swap(int num1, int num2) {
+
+		int temp = num1;
+		num1 = num2;
+		num2 = temp;
+
+		System.out.println("\nAfter Swapping");
+		System.out.println("Value stored in variable num1 :" + num1);
+		System.out.println("Value stored in variable num2 :" + num2);
+
+	}
+
+}
+
+
+16.Program Output:
+----------------
+Before Swapping 
+Value stored in variable num1 :10 
+Value stored in variable num2 :20 
+ 
+After Swapping 
+Value stored in variable num1 :20 
+Value stored in variable num2 :10 
+
+--------------------------------------------------
+17.Swap values without using temporary variable
+--------------------------------------------------
+
+public class SwapTwoNumbersNoTemp {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int num1 = 10;
+		int num2 = 20;
+
+		System.out.println("Before Swapping");
+		System.out.println("Value stored in variable num1 :" + num1);
+		System.out.println("Value stored in variable num2 :" + num2);
+		
+		//add both the numbers and assign it to first
+        num1 = num1 + num2;
+        num2 = num1 - num2;
+        num1 = num1 - num2;
+        
+        System.out.println("\nAfter Swapping");
+		System.out.println("Value stored in variable num1 :" + num1);
+		System.out.println("Value stored in variable num2 :" + num2);
+	}
+
+}
+
+17.Program Output:
+----------------
+Before Swapping 
+Value stored in variable num1 :10 
+Value stored in variable num2 :20  
+ 
+After Swapping 
+Value stored in variable num1 :20 
+Value stored in variable num2 :10  
+
+--------------------------------------------------
+18.List the Prime Numbers from 1 to N
+--------------------------------------------------
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class ListPrimeNumbers {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 * @throws NumberFormatException 
+	 */
+	public static void main(String[] args) throws NumberFormatException, IOException {
+
+		int limit;
+
+		System.out.println("Enter the Limit:");
+
+		InputStreamReader read = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(read);
+
+		limit = Integer.parseInt(in.readLine());
+
+		System.out.println("Prime numbers From 1 to " + limit);
+
+		//loop from 1 to limit
+		for(int i=1; i < limit; i++){
+
+			boolean isPrime = true;
+
+			//check to see if the number is prime
+			for(int j=2; j < i ; j++){
+
+				if(i % j == 0){
+					isPrime = false;
+					break;
+				}
+			}
+			// print the number
+			if(isPrime)
+				System.out.print(i + " ");
+		}
+	}
+
+}
+
+
+18.Program Output:
+----------------
+Enter the Limit: 
+100 
+Prime numbers From 1 to 100 
+1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97  
+
+--------------------------------------------------
+19.Check whether the number is palindrome or not
+--------------------------------------------------
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class NumberPalindrome {
+
+	/**
+	 * 
+	 * @param args
+	 * @throws IOException 
+	 * @throws NumberFormatException 
+	 */
+	public static void main(String[] args) throws NumberFormatException, IOException {
+
+		int number,temp,reversedNumber=0,beforeReverse;  
+
+		InputStreamReader read = new InputStreamReader(System.in);
+		BufferedReader in = new BufferedReader(read);
+
+		System.out.println("Enter the number");
+
+		number = Integer.parseInt(in.readLine());
+		beforeReverse = number;
+		
+		//reverse the number
+		while(number > 0){
+			temp = number % 10;
+			number = number / 10;
+			reversedNumber = reversedNumber * 10 + temp;
+		}
+
+		if(beforeReverse == reversedNumber)
+			System.out.println(beforeReverse + " is a palindrome number");
+		else
+			System.out.println(beforeReverse + " is not a palindrome number");
+	}
+
+}
+
+
+19.Program Output:
+----------------
+Enter the number 
+343 
+343 is a palindrome number 
+
+--------------------------------------------------
+20.Check String is Palindrome
+--------------------------------------------------
+
+public class CheckStringIsPalindrome {
+
+	public static void main(String[] args) {
+		String str="MAM";
+		String revstring="";
+
+		for(int i=str.length()-1;i>=0;--i) {
+			revstring +=str.charAt(i);
+		}
+
+		System.out.println(revstring);
+
+		if(revstring.equalsIgnoreCase(str)) {
+			System.out.println("String is a Palindrome");
+		}
+		else {
+			System.out.println("String is Not a Palindrome");
+		}
+
+	}
+
+}
+
+
+20.Program Output:
+----------------
+MAM 
+String is a Palindrome 
+
+--------------------------------------------------
+21.Reverse the number
+--------------------------------------------------
+
+public class ReverseNumber {
+
+	public static void main(String[] args) {
+
+
+		int number = 1234;
+
+		//Number before reverse
+		int numberBeforeReverse = number;
+
+		int reversedNumber = 0;
+		int temp = 0;
+
+		while(number > 0){
+
+			//use modulus operator to strip off the last digit
+			temp = number%10;
+
+			//create the reversed number
+			reversedNumber = reversedNumber * 10 + temp;
+			number = number/10;
+
+		}
+
+		//output the reversed number
+		System.out.println("Number Before Reverse: " + numberBeforeReverse);
+		System.out.println("Number After Reverse: " + reversedNumber);
+	}
+
+}
+
+
+21.Program Output:
+----------------
+Number Before Reverse: 1234 
+Number After Reverse: 4321 
+
+--------------------------------------------------
+22.Factorial of number using iterative method
+--------------------------------------------------
+
+    public class FactorialIterative {
+
+	public static void main(String[] args) {
+
+		int number = 5;
+
+		/*
+		 * Factorial of any number is !n.
+		 * For example, factorial of 5 is 5*4*3*2*1.
+		 */
+
+		int factorial = number;
+		
+		//Factorial of a number by iterative method		
+		for(int i =(number - 1); i > 1; i--)
+		{
+			factorial = factorial * i;
+		}
+
+		System.out.println("Factorial of a number "+number+" is " + factorial);
+	}
+
+}
+
+
+22.Program Output:
+----------------
+Factorial of a number 5 is 120
+
+--------------------------------------------------
+23.Factorial of number using recursive method
+--------------------------------------------------
+
+public class FactorialRecurssiveMethod {
+
+	public static void main(String[] args) {
+
+		FactorialRecurssiveMethod obj = new FactorialRecurssiveMethod();
+
+		int num=6;
+
+		int result = obj.fact(num);
+
+		System.out.println("Factorial of a number "+num+" is "+result);
+	}
+
+	private int fact(int num)
+	{
+		if(num<=1)
+			//if the number is 1 then return 1
+			return 1;
+		else
+			//else call the same function with the value - 1
+			return num*fact(num-1);
+	}
+
+}
+
+
+23.Program Output:
+----------------
+Factorial of a number 6 is 720
+
+--------------------------------------------------
+24.Generate Random Numbers
+--------------------------------------------------
+
+import java.util.*;
+
+public class GenerateRandomNumber {
+
+	public static void main(String[] args) {
+		int i;
+		System.out.println("Enter how many random number need to generate: ");
+		Scanner inputNumber = new Scanner(System.in);
+		int count=inputNumber.nextInt();
+		Random randNum = new Random();
+
+		System.out.println("Random Numbers: ");
+		for (i = 1; i <= count; i++) {
+			System.out.println(randNum.nextInt(100));
+		}
+	}
+
+}
+
+24.Program Output:
+----------------
+Enter how many random number need to generate:  
+5 
+Random Numbers:  
+2 
+30 
+48 
+64 
+82
+
+--------------------------------------------------
+25.Generate Fibonacci Series
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class FibonacciSeries {
+
+
+	public static void main(String[] args) {
+		FibonacciSeries obj = new FibonacciSeries();
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter number to generate Fibonacci Series: ");
+		int num = input.nextInt();
+		System.out.println("Fibonacci Series: ");
+		for(int i=0;i<num;i++)
+		{
+			System.out.println(obj.fibonacci(i));
+		}
+	}
+
+	private int fibonacci(int number) {
+
+		if ((number == 0) || (number == 1))
+			return number;
+		else
+			return fibonacci(number - 1) + fibonacci(number - 2);
+	}
+
+}
+
+
+25.Program Output:
+----------------
+Enter number to generate Fibonacci Series:  
+10 
+Fibonacci Series:  
+0 
+1 
+1 
+2 
+3 
+5 
+8 
+13 
+21 
+34 
+
+--------------------------------------------------
+26.Check for armstrong number
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+	
+	public static void main(String args[]) {
+		int n, sum = 0, tempVar, remainder, digits = 0;
+
+		Scanner input = new Scanner(System.in);
+		System.out.println("Input a number to check if it is an Armstrong number");      
+		n = input.nextInt();
+
+		tempVar = n;
+
+		// Count number of digits
+
+		while (tempVar != 0) {
+			digits++;
+			tempVar = tempVar/10;
+		}
+
+		tempVar = n;
+
+		while (tempVar != 0) {
+			remainder = tempVar%10;
+			sum = sum + power(remainder, digits);
+			tempVar = tempVar/10;
+		}
+
+		if (n == sum)
+			System.out.println(n + " is an Armstrong number.");
+		else
+			System.out.println(n + " is not an Armstrong number.");         
+	}
+
+	static int power(int n, int r) {
+		int c, p = 1;
+
+		for (c = 1; c <= r; c++) 
+			p = p*n;
+
+		return p;   
+	}
+}
+
+
+26.Program Output:
+----------------
+Input a number to check if it is an Armstrong number 
+153 
+153 is an Armstrong number. 
+
+--------------------------------------------------
+27.String Compare
+--------------------------------------------------
+
+public class StringCompare {
+
+	public static void main(String[] args) {
+
+		String string1 = "Java program";
+		String string2 = "java program";
+
+		System.out.println("Comparing String \"Java program\" with String \"java program\" using \"compareTo\" Method");
+		System.out.println( string1.compareTo(string2) );
+		System.out.println("Comparing String \"Java program\" with String \"java program\" using \"compareToIgnoreCase\" Method");
+		System.out.println( string1.compareToIgnoreCase(string2) );
+		System.out.println("Comparing String \"Java program\" with String \"Java program\" using \"compareTo\" Method");
+		System.out.println( string1.compareTo(string1));
+	}
+
+}
+
+
+27.Program Output:
+----------------
+Comparing String "Java program" with String "java program" using "compareTo" Method 
+-32 
+Comparing String "Java program" with String "java program" using "compareToIgnoreCase" Method 
+0 
+Comparing String "Java program" with String "Java program" using "compareTo" Method 
+0  
+
+--------------------------------------------------
+28.Convert String to Lower and Upper Case
+--------------------------------------------------
+
+public class ConvertCase {
+
+	public static void main(String[] args) {
+
+		String string1 = "Java Program"; // String has both lower and upper case letters
+
+		System.out.println("Original String Value: "+string1);
+		System.out.println("String Value After Converting to Upper Case: "+string1.toUpperCase());
+
+		System.out.println("Original String Value: "+string1);
+		System.out.println("String Value After Converting to Lower Case: "+string1.toLowerCase());
+	}
+
+}
+
+
+28.Program Output:
+----------------
+Original String Value: Java Program 
+String Value After Converting to Upper Case: JAVA PROGRAM 
+Original String Value: Java Program 
+String Value After Converting to Lower Case: java program 
+
+--------------------------------------------------
+29.Reverse String
+--------------------------------------------------
+
+public class ReverseString {
+
+	public static void main(String[] args){
+		String str="abc";
+		String reverseString = new StringBuffer(str).reverse().toString();
+		
+		System.out.println("String before reverse: "+str);
+		System.out.println("String after reverse: "+reverseString);
+	}
+
+}
+
+
+29.Program Output:
+----------------
+String before reverse: abc 
+String after reverse: cba 
+
+--------------------------------------------------
+30.Search Sub String in a String
+--------------------------------------------------
+
+public class SearchSubStringInString {
+
+	public static void main(String[] args) {
+
+		String str = "ABCD EFGH";
+		int strIndexStartingPoint = str.indexOf("CD");
+
+		if(strIndexStartingPoint == - 1){
+
+			System.out.println("CD not found");
+
+		}else{
+
+			System.out.println("Found CD at index "+ strIndexStartingPoint);
+		}
+	}
+
+}
+
+
+30.Program Output:
+----------------
+Found CD at index 2 
+
+--------------------------------------------------
+31.String Concatination
+--------------------------------------------------
+
+public class StringConcatination {
+
+	public static void main(String[] args) {
+		
+		//string concatenation using append method 
+		StringBuffer result = new StringBuffer();
+        result.append("Hello");
+        result.append(" World");
+        System.out.println("Concatenation using append method: " +result);
+        
+        //string concatenation using + operator
+        String str1="Hello";
+        String str2=" World";
+        String resultStr = str1+str2;
+        System.out.println("Concatenation using + operator: " +resultStr);
+
+	}
+
+}
+
+
+31.Program Output:
+----------------
+Concatenation using append method: Hello World 
+Concatenation using + operator: Hello World
+
+--------------------------------------------------
+32.Get the sub string of a string
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class SubString {
+
+	public static void main(String args[])
+	{
+		String string, sub;
+		int firstIndex,lastIndex;
+
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter a string to print substring");
+		string  = in.nextLine();
+		
+		System.out.println("Enter 1st and last index of a string entered");
+		firstIndex=in.nextInt();
+		lastIndex=in.nextInt();
+		sub = string.substring(firstIndex, lastIndex);
+		
+		System.out.println("Substring of \""+string+"\" from index "
+		+firstIndex+" to index "+lastIndex+" is \""+sub+"\"");
+	}
+
+}
+
+32.Program Output:
+----------------
+Enter a string to print substring 
+javaprograms 
+Enter 1st and last index of a string entered 
+2 
+5 
+Substring of "javaprograms"from index 2 to index 5 is "vap"
+
+--------------------------------------------------
+33.Count character occurances in a string
+--------------------------------------------------
+
+public class CharacterOccurancesInString {
+
+	public static void main(String[] args)	{
+
+		String str = "abcdefghcba";
+
+		String findStr = "a";
+		int lastIndex = 0;
+		int count = 0;
+
+		while (lastIndex != -1) {
+
+			lastIndex = str.indexOf(findStr, lastIndex);
+
+			if (lastIndex != -1) {
+				count++;
+				lastIndex += findStr.length();
+
+			}
+		}
+		System.out.println("Number of Occurances of Charater "+"\"b\" in string \""+str+"\" is :");
+		System.out.println(count);
+	}
+
+}
+
+
+33.Program Output:
+----------------
+Number of Occurances of Charater "b" in string "abcdefghcba" is : 
+2
+
+--------------------------------------------------
+34.Email Validation
+--------------------------------------------------
+
+public class EmailIDValidation {
+
+	public static void main(String[] args) {
+
+		String emailPattern = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+		String validEmail = "aaa_aaa@db.com";
+		Boolean validStatus = validEmail.matches(emailPattern);
+		System.out.println("Email : "+validEmail+" Valid Status : " + validStatus);
+		String invalidEmail = "ssss.com";
+		validStatus = invalidEmail.matches(emailPattern);
+		System.out.println("Email : "+invalidEmail
+				+" Valid Status : " + validStatus);
+	}
+
+}
+
+
+34.Program Output:
+----------------
+Email : aaa_aaa@db.com Valid Status : true 
+Email : ssss.com Valid Status : false 
+
+--------------------------------------------------
+35.Replace all occurances of sub string in a string
+--------------------------------------------------
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ReplaceAllSubString {
+
+	public static void main(String[] args) {
+
+		Pattern pattern = Pattern.compile("Hi");
+		String inputStr = "Hi Friends, Hi Teachers";
+		System.out.println("String Before Replacing : "+ inputStr);
+		Matcher matcher = pattern.matcher(inputStr);
+		String temp = matcher.replaceAll("Bye");
+		System.out.println("String After Replacing \"Hi\" with \"Bye\": "
+				+temp);
+	}
+
+}
+
+
+35.Program Output:
+----------------
+String Before Replacing : Hi Friends, Hi Teachers 
+String After Replacing "Hi" with "Bye": Bye Friends, Bye Teachers 
+
+--------------------------------------------------
+36.Addition of two matrix
+--------------------------------------------------
+
+import java.util.Scanner;
+
+class AddTwoMatrix
+{
+   public static void main(String args[])
+   {
+      int rows, columns, c, d;
+      Scanner input = new Scanner(System.in);
+ 
+      System.out.println("Enter the number of rows and columns of matrix");
+      rows = input.nextInt();
+      columns  = input.nextInt();
+ 
+      int firstMatrix[][] = new int[rows][columns];
+      int secondMatrix[][] = new int[rows][columns];
+      int sum[][] = new int[rows][columns];
+ 
+      System.out.println("Enter the elements of first matrix");
+ 
+      //Input elements of First matrix
+      for (  c = 0 ; c < rows ; c++ )
+         for ( d = 0 ; d < columns ; d++ )
+            firstMatrix[c][d] = input.nextInt();
+ 
+      System.out.println("Enter the elements of second matrix");
+ 
+    //Input elements of Second matrix
+      for ( c = 0 ; c < rows ; c++ )
+         for ( d = 0 ; d < columns ; d++ )
+            secondMatrix[c][d] = input.nextInt();
+ 
+      for ( c = 0 ; c < rows ; c++ )
+         for ( d = 0 ; d < columns ; d++ )
+             sum[c][d] = firstMatrix[c][d] + secondMatrix[c][d];
+ 
+      System.out.println("Sum of matrices:");
+ 
+      //Print Elements of Matrix
+      for ( c = 0 ; c < rows ; c++ )
+      {
+         for ( d = 0 ; d < columns ; d++ )
+            System.out.print(sum[c][d]+"\t");
+ 
+         System.out.println();
+      }
+   }
+}
+
+36.Program Output:
+----------------
+Enter the number of rows and columns of matrix 
+3 
+3 
+Enter the elements of first matrix 
+1 2 3 
+4 5 6 
+7 8 9 
+Enter the elements of second matrix 
+1 2 3 
+4 5 6 
+7 8 9 
+Sum of matrices: 
+2	4	6	 
+8	10	12	 
+14	16	18	 
+
+--------------------------------------------------
+37.Matrix Multiplication
+--------------------------------------------------
+
+import java.util.Scanner;
+ 
+class MatrixMultiplication
+{
+   public static void main(String args[])
+   {
+      int rows, columns, p, q, multiplicationResult = 0, c, d, k;
+ 
+      Scanner input = new Scanner(System.in);
+      System.out.println("Enter the number of rows and columns of first matrix");
+      rows = input.nextInt();
+      columns = input.nextInt();
+ 
+      int first[][] = new int[rows][columns];
+ 
+      System.out.println("Enter the elements of first matrix");
+ 
+      //Input elements of first matrix
+      for ( c = 0 ; c < rows ; c++ )
+         for ( d = 0 ; d < columns ; d++ )
+            first[c][d] = input.nextInt();
+ 
+      System.out.println("Enter the number of rows and columns of second matrix");
+      p = input.nextInt();
+      q = input.nextInt();
+ 
+      if ( columns != p )
+         System.out.println("Matrices with entered orders cant be multiplied with each other.");
+      else
+      {
+         int second[][] = new int[p][q];
+         int multiply[][] = new int[rows][q];
+ 
+         System.out.println("Enter the elements of second matrix");
+ 
+       //Input elements of Second matrix
+         for ( c = 0 ; c < p ; c++ )
+            for ( d = 0 ; d < q ; d++ )
+               second[c][d] = input.nextInt();
+ 
+         for ( c = 0 ; c < rows ; c++ )
+         {
+            for ( d = 0 ; d < q ; d++ )
+            {   
+               for ( k = 0 ; k < p ; k++ )
+               {
+                  multiplicationResult = multiplicationResult + first[c][k]*second[k][d];
+               }
+ 
+               multiply[c][d] = multiplicationResult;
+               multiplicationResult = 0;
+            }
+         }
+ 
+         System.out.println("Matrix Multiplication Result");
+ 
+         for ( c = 0 ; c < rows ; c++ )
+         {
+            for ( d = 0 ; d < q ; d++ )
+               System.out.print(multiply[c][d]+"\t");
+ 
+            System.out.print("\n");
+         }
+      }
+   }
+}
+
+37.Program Output:
+----------------
+Enter the number of rows and columns of first matrix 
+2 
+2 
+Enter the elements of first matrix 
+1 2 
+3 4 
+Enter the number of rows and columns of second matrix 
+2 
+2 
+Enter the elements of second matrix 
+1 2 
+3 4 
+Matrix Multiplication Result 
+7	10	 
+15	22		 
+
+--------------------------------------------------
+38.Transpose Matrix
+--------------------------------------------------
+
+import java.util.Scanner;
+ 
+class TransposeMatrix
+{
+   public static void main(String args[])
+   {
+      int rows, columns, c, d;
+ 
+      Scanner input = new Scanner(System.in);
+      System.out.println("Enter the number of rows and columns of matrix:");
+      rows = input.nextInt();
+      columns = input.nextInt();
+ 
+      int matrix[][] = new int[rows][columns];
+ 
+      System.out.println("Enter the elements of matrix:");
+ 
+      //Input elements of matrix
+      for ( c = 0 ; c < rows ; c++ )
+         for ( d = 0 ; d < columns ; d++ )
+            matrix[c][d] = input.nextInt();
+ 
+      int transposeMatrix[][] = new int[columns][rows];
+ 
+      for ( c = 0 ; c < rows ; c++ )
+      {
+         for ( d = 0 ; d < columns ; d++ )               
+            transposeMatrix[d][c] = matrix[c][d];
+      }
+ 
+      System.out.println("Transpose matrix:");
+ 
+      for ( c = 0 ; c < columns ; c++ )
+      {
+         for ( d = 0 ; d < rows ; d++ )
+               System.out.print(transposeMatrix[c][d]+"\t");
+ 
+         System.out.print("\n");
+      }
+   }
+}
+
+38.Program Output:
+----------------
+Enter the number of rows and columns of matrix: 
+2 
+3 
+Enter the elements of matrix: 
+1 2 3 
+4 5 6 
+Transpose matrix: 
+1	4	 
+2	5	 
+3	6
+
+--------------------------------------------------
+39.Compare Array
+--------------------------------------------------
+
+import java.util.Arrays;
+
+public class CompareArray {
+
+	public static void main(String[] args) throws Exception {
+		int[] ary1 = {1,2,3,4,5};
+		int[] ary2 = {1,2,3,4,5};
+		int[] ary3 = {1,2,3};
+		System.out.println("Is array 1 equal to array 2? "
+				+Arrays.equals(ary1, ary2));
+		System.out.println("Is array 1 equal to array 3? "
+				+Arrays.equals(ary1, ary3));
+	}
+
+}
+
+
+39.Program Output:
+----------------
+Is array 1 equal to array 2? true 
+Is array 1 equal to array 3? false 
+
+--------------------------------------------------
+40.Convert Arrays to Collections (List)
+--------------------------------------------------
+
+import java.util.Arrays;
+import java.util.List;
+
+public class ConvertArrayToList {
+
+	public static void main(String[] args) {
+
+		String array[]={"A","B","C"};
+		System.out.println("Contents of Array:");
+		for(String val:array)
+			System.out.println(val);
+
+		List <String> list = Arrays.asList(array);
+		System.out.println("Contents of List:");
+		for(String val: list)
+			System.out.println(val);
+	}
+
+}
+
+
+
+40.Program Output:
+----------------
+Contents of Array: 
+A 
+B 
+C 
+Contents of List: 
+A 
+B 
+C 
+
+--------------------------------------------------
+41.Variable Argument Method
+--------------------------------------------------
+
+public class VariableArguments {
+
+	public static void main(String[] args) {
+		VariableArguments obj = new VariableArguments();
+		obj.VariableArgumentMethod("Variable Arguments Example \n", 1,2,3,4);
+	}
+	
+	private void VariableArgumentMethod(String str, int ... num)
+	{
+		System.out.println(str);
+		for(int n: num)
+			System.out.println(n);
+	}
+
+}
+
+
+41.Program Output:
+----------------
+Variable Arguments Example  
+ 
+1 
+2 
+3 
+4 
+
+--------------------------------------------------
+42.Exception Handling Example
+--------------------------------------------------
+
+public class ExceptionHandlingExample {
+
+	public static void main(String[] args) {
+
+		int n1=20, n2 =0;
+
+		try	{
+			int result = n1/n2;
+			
+		} catch(ArithmeticException e){
+			System.out.println ("Cant be divided by Zero"+e);
+		} finally {
+			System.err.println("\n Finally gets execute at the end");
+		}
+	}
+
+}
+
+
+42.Program Output:
+----------------
+Cant be divided by Zerojava.lang.ArithmeticException: / by zero 
+ 
+Finally gets execute at the end 
+
+--------------------------------------------------
+43.Multiple Exception Handling
+--------------------------------------------------
+
+public class MultipleExceptionHandling {
+
+	public static void main(String[] args) {
+
+		int array[]={20,20,40};
+		int n1=20, n2 =0;
+
+		try	{
+			int result = n1/n2;
+
+			for (int i=0;i<=4;i++) {
+				System.out.println(array[i]);
+			}
+
+		} catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Array is out of Bound "+e);
+		} catch(ArithmeticException e) {
+			System.out.println ("Cant be divided by Zero "+e);
+		} finally {
+			System.err.println("\n Finally gets execute at the end \n");
+		}
+	}
+
+}
+
+
+
+43.Program Output:
+----------------
+Finally gets execute at the end   
+ Cant be divided by Zero java.lang.ArithmeticException: / by zero
+
+--------------------------------------------------
+44.User defined Exception
+--------------------------------------------------
+
+public class UserdefinedException {
+
+	public static void main(String args[]) throws Exception  {
+
+		String str = "aaa.com";
+		if(!str.contains("@")) {
+			throw new InvalidEmailException("Invalid Email Id");
+		}
+	}
+
+}
+
+class InvalidEmailException extends Exception {
+	public InvalidEmailException(String mymsg) {
+		super(mymsg);
+	}
+}
+
+
+
+44.Program Output:
+----------------
+Exception in thread "main" InvalidEmailException: Invalid Email Id 	
+at UserdefinedException.main(UserdefinedException.java:8)
+
+--------------------------------------------------
+45.Linear search in array of integers
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class LinearSearch {
+
+	public static void main(String[] args) {
+		
+		int c, numberOfElements, search, array[];
+		 
+	    Scanner inputElement = new Scanner(System.in);
+	    System.out.println("Enter number of elements");
+	    numberOfElements = inputElement.nextInt(); 
+	    array = new int[numberOfElements];
+	 
+	    System.out.println("Enter " + numberOfElements + " integers");
+	 
+	    for (c = 0; c < numberOfElements; c++)
+	      array[c] = inputElement.nextInt();
+	 
+	    System.out.println("Enter value to find");
+	    search = inputElement.nextInt();
+	 
+	    for (c = 0; c < numberOfElements; c++)
+	    {
+	      if (array[c] == search)     /* Searching element is present */
+	      {
+	         System.out.println(search + " is present at location " + (c + 1) + ".");
+	          break;
+	      }
+	   }
+	   if (c == numberOfElements)  /* Searching element is absent */
+	      System.out.println(search + " is not present in array.");
+
+	}
+
+}
+
+
+45.Program Output:
+----------------
+Enter number of elements 
+5 
+Enter 5 integers 
+10 
+5 
+77 
+8 
+45 
+Enter value to find 
+8 
+8 is present at location 4.
+
+--------------------------------------------------
+46.Binary search in array of integers
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class BinarySearch {
+
+	public static void main(String args[])
+	{
+		int c, first, last, middle, n, search, array[];
+
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter number of elements");
+		n = in.nextInt(); 
+		array = new int[n];
+
+		System.out.println("Enter " + n + " integers");
+
+		for (c = 0; c < n; c++)
+			array[c] = in.nextInt();
+
+		System.out.println("Enter value to find");
+		search = in.nextInt();
+
+		first  = 0;
+		last   = n - 1;
+		middle = (first + last)/2;
+
+		while( first <= last )
+		{
+			if ( array[middle] < search )
+				first = middle + 1;    
+			else if ( array[middle] == search ) 
+			{
+				System.out.println(search + " found at location " + (middle + 1) + ".");
+				break;
+			}
+			else
+				last = middle - 1;
+
+			middle = (first + last)/2;
+		}
+		if ( first > last )
+			System.out.println(search + " is not present in the list.\n");
+	}
+
+}
+
+
+46.Program Output:
+----------------
+Enter number of elements 
+5 
+Enter 5 integers 
+11 
+22 
+33 
+44 
+55 
+Enter value to find 
+33 
+33 found at location 3.
+
+--------------------------------------------------
+47.Display Current Date and Time
+--------------------------------------------------
+
+import java.util.*;
+
+public class DateTime {
+
+	public static void main(String args[])
+	{
+		int day, month, year;
+		int second, minute, hour;
+		GregorianCalendar date = new GregorianCalendar();
+
+		day = date.get(Calendar.DAY_OF_MONTH);
+		month = date.get(Calendar.MONTH);
+		year = date.get(Calendar.YEAR);
+
+		second = date.get(Calendar.SECOND);
+		minute = date.get(Calendar.MINUTE);
+		hour = date.get(Calendar.HOUR);
+
+		System.out.println("Current date :-  "+day+"/"+(month+1)+"/"+year);
+		System.out.println("Current time :-  "+hour+" : "+minute+" : "+second);
+	}
+
+}
+
+
+47.Program Output:
+----------------
+Current date :-  7/5/2016 
+Current time :-  9 : 42 : 52 
+
+--------------------------------------------------
+48.Format Time in Hour Format
+--------------------------------------------------
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TimeInHoursFormat {
+
+	public static void main(String[] args) {
+		//Create the instance of Date Class
+		Date date = new Date();
+		
+		//Specify the format you need from date
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+		//Format the current date to the specified format and print
+		System.out.println("Time in Hour format : "+ simpleDateFormat.format(date));
+	}
+
+}
+
+
+48.Program Output:
+----------------
+Time in Hour format : 17:49
+
+--------------------------------------------------
+49.Format Time in 12 Hour Format
+--------------------------------------------------
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class TimeInAMPMFormat {
+
+	public static void main(String[] args) {
+		//Create the instance of Date Class
+		Date date = new Date();
+
+		//Specify the format you need from date
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
+
+		//Format the current date to the specified format and print
+		System.out.println("Time in 12 Hour format : "+ simpleDateFormat.format(date));
+	}
+
+}
+
+
+49.Program Output:
+----------------
+Time in 12 Hour format : 05:57:11 PM
+
+--------------------------------------------------
+50.Display All Week Names
+--------------------------------------------------
+
+import java.text.DateFormatSymbols;
+
+public class DisplayWeekNames {
+
+	public static void main(String[] args) {
+		String[] weekDaysNames = new DateFormatSymbols().getWeekdays();
+		System.out.println("Display Week Names:");
+		for(String weekName:weekDaysNames)
+			System.out.println(weekName);
+	}
+
+}
+
+
+50.Program Output:
+----------------
+Display Week Names: 
+ 
+Sunday 
+Monday 
+Tuesday 
+Wednesday 
+Thursday 
+Friday 
+Saturday
+
+--------------------------------------------------
+51.Display All Month Names
+--------------------------------------------------
+
+import java.text.DateFormatSymbols;
+
+public class DisplayNamesOfMonth {
+
+	public static void main(String[] args) {
+
+		String[] monthNames = new DateFormatSymbols().getMonths();
+		System.out.println("Display All Month Names:\n");
+		for(String monthName : monthNames)
+			System.out.println(monthName);
+	}
+
+}
+
+
+51.Program Output:
+----------------
+Display All Month Names: 
+ 
+January 
+February 
+March 
+April 
+May 
+June 
+July 
+August 
+September 
+October 
+November 
+December
+
+--------------------------------------------------
+52.Static Block Example
+--------------------------------------------------
+
+public class StaticBlock {
+
+	public static void main(String[] args) {
+		System.out.println("Main method is executed.");
+	}
+
+	static {
+		System.out.println("Static block is executed before main method.");
+	}
+}
+
+
+52.Program Output:
+----------------
+Static block is executed before main method. 
+Main method is executed. 
+
+--------------------------------------------------
+53.Method Overloading
+--------------------------------------------------
+
+public class ConstructorOverloading {
+
+	public ConstructorOverloading() {
+		System.out.println("Default Constructor Called");
+	}
+
+	public ConstructorOverloading(String str){
+		System.out.println(str);
+	}
+
+	public static void main(String[] args) {
+		ConstructorOverloading obj = new ConstructorOverloading();
+		ConstructorOverloading obj1 = new ConstructorOverloading("Parameterised Constructor Called");
+	}
+
+}
+
+
+53.Program Output:
+----------------
+add method with two parameters called 
+3 
+add method with three parameters called 
+6 
+
+--------------------------------------------------
+54.Static Method Overloading
+--------------------------------------------------
+
+public class StaticMethodOverloading {
+
+	public static void staticMethod() {
+
+		System.out.println("staticMethod(): Zero arguments");
+
+	} 
+
+	public static void staticMethod(int a) {
+
+		System.out.println("staticMethod(int a): one argument");
+
+	} 
+
+	public static void staticMethod(String str, int x) {
+
+		System.out.println("staticMethod(String str, int x): two arguments");
+
+	}
+
+	public static void main(String[] args) {
+
+		StaticMethodOverloading.staticMethod();
+		StaticMethodOverloading.staticMethod(99);
+		StaticMethodOverloading.staticMethod("Overload Static Method",99); 
+	}
+
+}
+
+
+
+54.Program Output:
+----------------
+staticMethod(): Zero arguments 
+staticMethod(int a): one argument 
+staticMethod(String str, int x): two arguments 
+
+--------------------------------------------------
+55.Method Overriding 
+--------------------------------------------------
+
+public class MethodOverriding {
+
+	public static void main(String[] args) {
+		ParentClass pcObj = new ParentClass();
+		ChildClass ccObj = new ChildClass();
+
+		ParentClass parentClassObj;
+		parentClassObj = pcObj;
+		parentClassObj.display();
+
+		parentClassObj = ccObj;
+		parentClassObj.display();
+	}
+
+}
+
+class ParentClass{
+	public void display(){
+		System.out.println("Inside Parent Class");
+	}
+}
+
+class ChildClass extends ParentClass{
+	public void display(){
+		System.out.println("Inside Child Class");
+	}
+}
+
+
+55.Program Output:
+----------------
+Inside Parent Class 
+Inside Child Class 
+
+--------------------------------------------------
+56.Static Method Overriding
+--------------------------------------------------
+
+public class StaticMethodOverriding {
+
+	public static void staticMethod() {
+
+		System.out.println("Super Class static Method called");
+	}
+
+	public static void main(String[] args) {
+		StaticMethodOverriding superObj= new StaticMethodOverriding();
+		StaticMethodOverriding  superobj1= new  SubClassDemo(); 
+		SubClassDemo subObj= new  SubClassDemo(); 
+		//here no need to create object to call a static method.
+
+		superObj.staticMethod();
+		superobj1.staticMethod();
+		subObj.staticMethod();
+		
+		StaticMethodOverriding.staticMethod();
+		SubClassDemo.staticMethod();
+	}
+
+}
+
+class SubClassDemo extends StaticMethodOverriding{
+
+	public static void staticMethod(){
+		System.out.println("Sub Class staticMethod called");
+	}
+
+}
+
+
+56.Program Output:
+----------------
+Super Class static Method called 
+Super Class static Method called 
+Sub Class staticMethod called 
+Super Class static Method called 
+Sub Class staticMethod called 
+
+--------------------------------------------------
+57.Inheritance Example
+--------------------------------------------------
+
+public class InheritanceInJava {
+	
+
+	public static void main(String[] args) {
+
+		Child_Class obj = new Child_Class();
+		
+		//Using Child lass object able to call the parent methods
+		obj.display();
+	}
+
+}
+
+class Parent_Class{
+
+	public void display(){
+		System.out.println("Inside Parent Class");
+	}
+}
+
+class Child_Class extends Parent_Class{
+	public void display_Child(){
+		System.out.println("Inside Child Class");
+	}
+}
+
+
+57.Program Output:
+----------------
+Inside Parent Class 
+
+--------------------------------------------------
+58.Limit the Object Creation(Singleton)
+--------------------------------------------------
+
+//Here in this program we are limiting the number of objects created for class to 3 
+//only three object we can create for "LimitObjectCreation" class
+
+public class LimitObjectCreation{
+
+	private static LimitObjectCreation limitObjectCreation;
+	public static int objCount = 0;
+
+	private LimitObjectCreation() {
+		System.out.println("Singleton(): Private constructor invoked");
+
+		objCount++;
+	}
+
+	public static LimitObjectCreation getInstance()	{
+
+		if (objCount < 3) {
+
+			limitObjectCreation = new LimitObjectCreation();
+
+		}
+
+		return limitObjectCreation;
+	}
+
+	public static void main(String args[]) {
+
+		LimitObjectCreation obj1= LimitObjectCreation.getInstance();
+		LimitObjectCreation obj2= LimitObjectCreation.getInstance();
+		LimitObjectCreation obj3= LimitObjectCreation.getInstance();
+		LimitObjectCreation obj4= LimitObjectCreation.getInstance();
+		LimitObjectCreation obj5= LimitObjectCreation.getInstance();
+
+		System.out.println(obj1.hashCode());
+		System.out.println(obj2.hashCode());
+		System.out.println(obj3.hashCode());
+		System.out.println(obj4.hashCode());
+		System.out.println(obj5.hashCode());
+
+	}
+
+}
+
+
+
+58.Program Output:
+----------------
+Singleton(): Private constructor invoked 
+Singleton(): Private constructor invoked 
+Singleton(): Private constructor invoked 
+1905823030 
+1449070205 
+2058378455 
+2058378455 
+2058378455
+
+--------------------------------------------------
+59.Interface Example
+--------------------------------------------------
+
+interface Interface_Exmp{
+
+	public void display();
+}
+
+public class InterfaceExample implements Interface_Exmp{
+
+	public void display(){
+		System.out.println("Interface Demo");
+	}
+
+	public static void main(String[] args) {
+		InterfaceExample obj = new InterfaceExample();
+		obj.display();
+	}
+
+}
+
+
+
+59.Program Output:
+----------------
+Interface Demo 
+
+--------------------------------------------------
+60.Constructor Chaining
+--------------------------------------------------
+
+public class ConstructorChaining {
+
+	int a,b;
+
+	ConstructorChaining() {
+		this(1,2);
+		System.out.println("Default constructor");
+	} 
+
+	ConstructorChaining(int x , int y) {
+		this(1,2,3); 
+		a=x;
+		b=y;
+		System.out.println("Two argument constructor");
+	} 
+
+	ConstructorChaining(int a , int b,int c) {
+		System.out.println("Three argument constructor");
+	} 
+
+	public static void main(String[] args) {
+		ConstructorChaining obj=new ConstructorChaining();
+		System.out.println(obj.a);
+		System.out.println(obj.b);
+	}
+
+}
+
+
+60.Program Output:
+----------------
+Three argument constructor 
+Two argument constructor 
+Default constructor 
+1 
+2 
+
+--------------------------------------------------
+61.Object cloning
+--------------------------------------------------
+
+public class StudentDetails implements Cloneable {
+
+	int rollnumber=0; 
+	String name="";
+
+	StudentDetails (int rollnum,String name) { 
+		this.rollnumber=rollnum;
+		this.name=name;
+	}
+
+	public StudentDetails clone() throws CloneNotSupportedException{
+
+		return (StudentDetails) super.clone();
+
+	}
+
+	public static void main(String[] args) {
+
+		StudentDetails std1 = new StudentDetails (100,"AAAA");
+		System.out.println("Value From Original Object:");
+		System.out.println(std1.name);
+
+		try {
+
+			StudentDetails std2 = std1.clone();
+			System.out.println("Value From Cloned Object:");
+			System.out.println(std2.name);
+
+		}
+		catch (CloneNotSupportedException e1) {
+
+			e1.printStackTrace();
+		}
+	}
+}
+
+
+61.Program Output:
+----------------
+Value From Original Object: 
+AAAA 
+Value From Cloned Object: 
+AAAA 
+
+--------------------------------------------------
+62.Stack Implementation Using Array
+--------------------------------------------------
+
+public class StackImplementation {  
+	private static final int size = 3;  
+	int stack[] = new int[size];  
+	int top = -1;  
+
+	public void push(int element) {  
+		if (top < size - 1) {  
+			top++;  
+			stack[top] = element;  
+			System.out.println("Element " + element  
+					+ " is pushed to Stack !");  
+			printElements();  
+		} else {  
+			System.out.println("Stack Overflow !");  
+		}  
+	}  
+
+	public void pop() {  
+		if (top >= 0) { 
+			System.out.println("Pop operation done !"+"\nElement "+stack[top]+" Pop out"); 
+			top--;  
+
+		} else {  
+			System.out.println("Stack Underflow !");  
+		}  
+	}  
+
+	public void printElements() {  
+		if (top >= 0) {  
+			System.out.println("Elements in stack :");  
+			for (int i = top; i >=0; i--) {  
+				System.out.println(stack[i]);  
+			}  
+		}  
+	}  
+
+	public static void main(String[] args) {  
+		StackImplementation obj = new StackImplementation();  
+		obj.pop();  
+		obj.push(24);  
+		obj.push(26);  
+		obj.push(65);  
+		obj.push(34);  
+		obj.pop();  
+		obj.printElements();
+		obj.pop();  
+		obj.printElements();
+		obj.pop();  
+		obj.pop(); 
+
+	}  
+
+}   
+
+
+62.Program Output:
+----------------
+Stack Underflow ! 
+Element 24 is pushed to Stack ! 
+Elements in stack : 
+24 
+Element 26 is pushed to Stack ! 
+Elements in stack : 
+26 
+24 
+Element 65 is pushed to Stack ! 
+Elements in stack : 
+65 
+26 
+24 
+Stack Overflow ! 
+Pop operation done ! 
+Element 65 Pop out 
+Elements in stack : 
+26 
+24 
+Pop operation done ! 
+Element 26 Pop out 
+Elements in stack : 
+24 
+Pop operation done ! 
+Element 24 Pop out 
+Stack Underflow !  
+
+--------------------------------------------------
+63.Queue Implementation Using Array
+--------------------------------------------------
+
+public class QueueImplementation {  
+
+	private static final int qSize = 3;  
+	int queue[] = new int[qSize];  
+	int size = 0;  
+	int top = -1;  
+	int rear = 0;  
+
+	public void push(int element) {  
+		if (top < qSize - 1) {  
+			top++;  
+			queue[top] = element;  
+			System.out.println("Element " + element  
+					+ " is pushed to Queue !");  
+			display();  
+		} else {  
+			System.out.println("Overflow !");  
+		}  
+	}  
+
+	public void pop() {  
+		if (top >= rear) {  
+			System.out.println("Pop operation done ! Element "+queue[rear]+" is pop out");  
+			rear++;  
+			display();  
+		} else {  
+			System.out.println("Underflow !");  
+		}  
+	}  
+
+	public void display() {  
+		if (top >= rear) {  
+			System.out.println("Elements in Queue : ");  
+			for (int i = top; i >=rear; i--) {  
+				System.out.print(queue[i]+" ");  
+			}  
+			System.out.println("\n");
+		}  
+	}  
+
+	public static void main(String[] args) {  
+		QueueImplementation obj = new QueueImplementation();  
+		obj.pop();  
+		obj.push(26);  
+		obj.push(67);  
+		obj.push(45);  
+		obj.push(33);  
+		obj.pop();  
+		obj.pop();  
+		obj.pop();  
+		obj.pop();  
+	}  
+
+}  
+
+63.Program Output:
+----------------
+Underflow ! 
+Element 26 is pushed to Queue ! 
+Elements in Queue :  
+26  
+ 
+Element 67 is pushed to Queue ! 
+Elements in Queue :  
+67 26  
+ 
+Element 45 is pushed to Queue ! 
+Elements in Queue :  
+45 67 26  
+ 
+Overflow ! 
+Pop operation done ! Element 26 is pop out 
+Elements in Queue :  
+45 67  
+ 
+Pop operation done ! Element 67 is pop out 
+Elements in Queue :  
+45  
+ 
+Pop operation done ! Element 45 is pop out 
+Underflow !  
+
+--------------------------------------------------
+64.Tower of Hanoi problem
+--------------------------------------------------
+
+public class TowerOfHanoi {
+
+	public static void main(String[] args) {
+
+		//Number of disks
+		int numDisks = 3;
+		System.out.println("Tower Of Hanoi Problem:\n");
+		doTowersOfHanoi(numDisks, 'A', 'B', 'C');
+	}
+
+	public static void doTowersOfHanoi(int topN, char from,
+			char middleTemp, char to) {
+		if (topN == 1) {
+			System.out.println("Disk 1 from "
+					+ from + " to " + to);
+		}else {
+			doTowersOfHanoi(topN - 1, from, to, middleTemp);
+			System.out.println("Disk "
+					+ topN + " from " + from + " to " + to);
+			doTowersOfHanoi(topN - 1, middleTemp, from, to);
+		}
+	}
+}
+
+
+64.Program Output:
+----------------
+Tower Of Hanoi Problem: 
+ 
+Disk 1 from A to C 
+Disk 2 from A to B 
+Disk 1 from C to B 
+Disk 3 from A to C 
+Disk 1 from B to A 
+Disk 2 from B to C 
+Disk 1 from A to C 
+
+--------------------------------------------------
+65.Iterator in Java
+--------------------------------------------------
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+
+public class IteratorInJava {
+
+	public static void main(String[] args) {
+
+		//create an array list use any collection object
+		ArrayList<String> arraylist = new ArrayList<String>();
+
+		//add elements to the array list
+		arraylist .add("AAA");
+		arraylist .add("BBB");
+		arraylist .add("CCC");
+		arraylist .add("DDD");
+		arraylist .add("EEE");
+
+		//use iterator to display contents of arraylist
+		System.out.println("Contents of arraylist : ");
+
+		Iterator<String> itr = arraylist .iterator();
+
+		while (itr.hasNext()) {
+			Object obj = itr.next();
+			System.out.print(obj + "\n");
+
+		}
+	}
+
+}
+
+
+65.Program Output:
+----------------
+Contents of arraylist :  
+AAA 
+BBB 
+CCC 
+DDD 
+EEE
+
+--------------------------------------------------
+66.Remove duplicates from array using collections
+--------------------------------------------------
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class RemoveDuplicates {
+
+	public static void main(String[] args) {
+
+		String[] data = { "A", "C", "A", "B", "A", "B", "C", "A", "B", "C" };
+
+		System.out.println("Original array : " + Arrays.toString(data));
+
+		List<String> list = Arrays.asList(data);
+		Set<String> set = new HashSet<String>(list);
+
+		System.out.print("After removing duplicates: ");
+		String[] finalarray= new String[set.size()];
+		set.toArray(finalarray);
+
+		for (String ele: finalarray) {
+
+			System.out.print(ele + ", ");
+
+		}
+	}
+
+}
+
+
+
+66.Program Output:
+----------------
+Original array : [A, C, A, B, A, B, C, A, B, C] 
+After removing duplicates: A, B, C,  
+
+--------------------------------------------------
+67.Array List Class Example
+--------------------------------------------------
+
+import java.util.*;  
+public class ArrayListExample {
+
+	public static void main(String args[]){  
+
+		ArrayList <String> al=new ArrayList <String>();  
+		al.add("AAA");
+		al.add("BBB");  
+		al.add("CCC");  
+		al.add("DDD");  
+
+		System.out.println("ArrayList Example:");
+		//Create Iterator to traverse elements in array list 
+		Iterator itr=al.iterator();
+		while(itr.hasNext()){  
+			System.out.println(itr.next());  
+		}  
+	}  
+
+}
+
+
+67.Program Output:
+----------------
+ArrayList Example: 
+AAA 
+BBB 
+CCC 
+DDD 
+
+--------------------------------------------------
+68.User Defined Class Array List Example
+--------------------------------------------------
+
+import java.util.*;  
+
+public class UserDefinedClassInArrayList {
+
+	public static void main(String[] args) {
+
+		//Creating user defined class objects  
+		Student s1=new Student(1,"AAA",13);  
+		Student s2=new Student(2,"BBB",14);  
+		Student s3=new Student(3,"CCC",15); 
+
+		ArrayList<Student> al=new ArrayList<Student>();
+		al.add(s1);
+		al.add(s2);  
+		al.add(s3);  
+
+		Iterator itr=al.iterator();  
+		
+		//traverse elements of ArrayList object  
+		while(itr.hasNext()){  
+			Student st=(Student)itr.next();  
+			System.out.println(st.rollno+" "+st.name+" "+st.age);  
+		}  
+	}
+}
+
+class Student{  
+	int rollno;  
+	String name;  
+	int age;  
+	Student(int rollno,String name,int age){  
+		this.rollno=rollno;  
+		this.name=name;  
+		this.age=age;  
+	}  
+}  
+
+
+
+68.Program Output:
+----------------
+1 AAA 13 
+2 BBB 14 
+3 CCC 15 
+
+--------------------------------------------------
+69.Reverse Elements in ArrayList Variable
+--------------------------------------------------
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ReverseArrayList {
+
+	public static void main(String[] args) {
+		//Creating the instance of ArrayList Class
+		ArrayList arrayList = new ArrayList();
+
+		//Adding elements to ArrayList Object 
+		arrayList.add("Apple");
+		arrayList.add("Bat");
+		arrayList.add("Cat");
+		arrayList.add("Dog");
+
+		//Print the Elements in ArrayList Object
+		System.out.println("Before Reversing Arry List: " + arrayList);
+
+		//Reverse the Elements in ArrayList Object
+		Collections.reverse(arrayList);
+
+		//Print the Elements in ArrayList Object
+		System.out.println("After Reversing Array List: " + arrayList);
+	}
+
+}
+
+
+69.Program Output:
+----------------
+Before Reversing Array List: [Apple, Bat, Cat, Dog] 
+After Reversing Array List: [Dog, Cat, Bat, Apple] 
+
+--------------------------------------------------
+70.LinkedList Collection Example
+--------------------------------------------------
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+
+public class LinkedListCollections {
+
+	public static void main(String[] args) {
+		List linkedList = new LinkedList();
+		linkedList.add("aaa");
+		linkedList.add("bbb");
+		linkedList.add("ccc");
+		linkedList.add("ddd");
+		linkedList.add("eee");
+		System.out.println("Collection LinkedList Demo:");
+		displayAll(linkedList);
+	}
+	static void displayAll(Collection col) {
+		Iterator itr = col.iterator();
+		while (itr.hasNext()) {
+			String str = (String) itr.next();
+			System.out.print(str + " ");
+		}
+		System.out.println();
+	}
+
+}
+
+
+70.Program Output:
+----------------
+Collection LinkedList Demo: 
+aaa bbb ccc ddd eee  
+
+--------------------------------------------------
+71.ArrayList Collection Example
+--------------------------------------------------
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+
+public class ArrayListCollections {
+
+	public static void main(String[] args) {
+		List arrayList = new ArrayList();
+		arrayList.add("LL");
+		arrayList.add("MM");
+		arrayList.add("NN");
+		arrayList.add("OO");
+		System.out.println("Collection ArrayList Demo:");
+		displayAll(arrayList);
+	}
+	static void displayAll(Collection col) {
+		Iterator itr = col.iterator();
+		while (itr.hasNext()) {
+			String str = (String) itr.next();
+			System.out.print(str + " ");
+		}
+		System.out.println();
+	}
+
+}
+
+
+71.Program Output:
+----------------
+Collection ArrayList Demo: 
+LL MM NN OO  
+
+--------------------------------------------------
+72.HashSet Collection Example
+--------------------------------------------------
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+
+public class HashSetCollection {
+
+	public static void main(String[] args) {
+		Set hashSet = new HashSet();
+		hashSet.add("hs1");
+		hashSet.add("hs2");
+		hashSet.add("hs3");
+		hashSet.add("hs4");
+		hashSet.add("hs5");
+		System.out.println("Collection HashSet Demo:");
+		displayAll(hashSet);
+	}
+	static void displayAll(Collection col) {
+		Iterator itr = col.iterator();
+		while (itr.hasNext()) {
+			String str = (String) itr.next();
+			System.out.print(str + " ");
+		}
+		System.out.println();
+	}
+
+}
+
+
+72.Program Output:
+----------------
+Collection HashSet Demo: 
+hs4 hs3 hs5 hs2 hs1  
+
+--------------------------------------------------
+73.TreeSet Collection Example
+--------------------------------------------------
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+
+public class TreeSetCollection {
+	public static void main(String[] args) {
+		SortedSet treeSet = new TreeSet();
+		treeSet.add("tr1");
+		treeSet.add("tr2");
+		treeSet.add("tr3");
+		treeSet.add("tr4");
+		System.out.println("Collection Tree Set Demo:");
+		displayAll(treeSet);
+	}
+	static void displayAll(Collection col) {
+		Iterator itr = col.iterator();
+		while (itr.hasNext()) {
+			String str = (String) itr.next();
+			System.out.print(str + " ");
+		}
+		System.out.println();
+	}
+}
+
+
+73.Program Output:
+----------------
+Collection Tree Set Demo: 
+tr1 tr2 tr3 tr4    
+
+--------------------------------------------------
+74.HashMap Collection Example
+--------------------------------------------------
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class HashMapCollection {
+
+	public static void main(String[] args) {
+		Map map1 = new HashMap();
+		map1.put("key1", "AA");
+		map1.put("key2", "BB");
+		map1.put("key3", "CC");
+		map1.put("key4", "DD");
+		System.out.println("Collection HashMap Demo:");
+		displayAll(map1.keySet());
+		displayAll(map1.values());
+	}
+	static void displayAll(Collection col) {
+		Iterator itr = col.iterator();
+		while (itr.hasNext()) {
+			String str = (String) itr.next();
+			System.out.print(str + " ");
+		}
+		System.out.println();
+	}
+}
+
+
+74.Program Output:
+----------------
+Collection HashMap Demo: 
+key4 key3 key2 key1  
+DD CC BB AA    
+
+--------------------------------------------------
+75.TreeMap Collection Example
+--------------------------------------------------
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+
+public class TreeMapCollection {
+
+	public static void main(String[] args) {
+		SortedMap map = new TreeMap();
+		map.put("key1", "AA");
+		map.put("key2", "BB");
+		map.put("key3", "CC");
+		map.put("key4", "DD");
+		System.out.println("Collection TreeMap Demo:");
+		displayAll(map.keySet());
+		displayAll(map.values());
+	}
+	static void displayAll(Collection col) {
+		Iterator itr = col.iterator();
+		while (itr.hasNext()) {
+			String str = (String) itr.next();
+			System.out.print(str + " ");
+		}
+		System.out.println();
+	}
+
+}
+
+
+75.Program Output:
+----------------
+Collection TreeMap Demo: 
+key1 key2 key3 key4  
+AA BB CC DD    
+
+--------------------------------------------------
+76.LinkedHashMap and LinkedHashSet Collection Example
+--------------------------------------------------
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+
+
+public class LinkedHashMapNLinkedHashSet {
+	public static void main(String[] args) {
+
+		LinkedHashSet lnkHashset = new LinkedHashSet();
+		lnkHashset.add("one");
+		lnkHashset.add("two");
+		lnkHashset.add("three");
+		lnkHashset.add("four");
+		lnkHashset.add("five");
+		System.out.println("LinkedHashSet Demo: ");
+		displayAll(lnkHashset);
+
+		LinkedHashMap lnkHashMap = new LinkedHashMap();
+		lnkHashMap.put("key1", "AA");
+		lnkHashMap.put("key2", "BB");
+		lnkHashMap.put("key3", "CC");
+		lnkHashMap.put("key4", "DD");
+		lnkHashMap.put("key4", "EE");
+		System.out.println("LinkedHashMap Demo: ");
+		displayAll(lnkHashMap.keySet());
+		displayAll(lnkHashMap.values());
+	}
+	static void displayAll(Collection col) {
+		Iterator itr = col.iterator();
+		while (itr.hasNext()) {
+			String str = (String) itr.next();
+			System.out.print(str + " ");
+		}
+		System.out.println();
+	}
+}
+
+
+
+76.Program Output:
+----------------
+LinkedHashSet Demo:  
+one two three four five  
+LinkedHashMap Demo:  
+key1 key2 key3 key4  
+AA BB CC EE  
+
+--------------------------------------------------
+77.Bubble Sort
+--------------------------------------------------
+
+import java.util.Scanner;
+
+class BubbleSort {
+	public static void main(String []args) {
+		
+		int n, i, j, swap;
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Input number of integers to sort");
+		n = input.nextInt();
+
+		int array[] = new int[n];
+
+		System.out.println("Enter " + n + " integers");
+
+		for (i = 0; i < n; i++) 
+			array[i] = input.nextInt();
+
+		for (i = 0; i < ( n - 1 ); i++) {
+			for (j = 0; j < n - i - 1; j++) {
+				//Sort in ascending order
+				if (array[j] > array[j+1]) // For descending order use < 
+				{
+					swap       = array[j];
+					array[j]   = array[j+1];
+					array[j+1] = swap;
+				}
+			}
+		}
+
+		System.out.println("Sorted list of numbers");
+
+		for (i = 0; i < n; i++) 
+			System.out.println(array[i]);
+	}
+}
+
+77.Program Output:
+----------------
+Input number of integers to sort 
+5 
+Enter 5 integers 
+3 
+1 
+5 
+4 
+2 
+Sorted list of numbers 
+1 
+2 
+3 
+4 
+5 
+
+--------------------------------------------------
+78.Quick Sort
+--------------------------------------------------
+
+public class QuickSort {
+
+	private int array[];
+	private int length;
+
+	public void sort(int[] arry) {
+
+		if (arry == null || arry.length == 0) {
+			System.out.println("Input Array is Null or Length is zero");
+		}
+		this.array = arry;
+		length = arry.length;
+		quickSort(0, length - 1);
+	}
+
+	private void quickSort(int lowerIndex, int higherIndex) {
+
+		int i = lowerIndex;
+		int j = higherIndex;
+		// Find pivot number
+		int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+		
+		while (i <= j) {
+			
+			while (array[i] < pivot) {
+				i++;
+			}
+			while (array[j] > pivot) {
+				j--;
+			}
+			if (i <= j) {
+				exchangeNumbers(i, j);
+				i++;
+				j--;
+			}
+		}
+		// call quickSort() method recursively
+		if (lowerIndex < j)
+			quickSort(lowerIndex, j);
+		if (i < higherIndex)
+			quickSort(i, higherIndex);
+	}
+
+	private void exchangeNumbers(int i, int j) {
+		int temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+
+	public static void main(String args[]){
+		
+		System.out.println("Quick Sort Example:");
+		QuickSort obj = new QuickSort();
+		int[] input = {55,3,13,77,66,87,34,23,43,4,49};
+		obj.sort(input);
+		for(int i:input){
+			System.out.print(i);
+			System.out.print(" ");
+		}
+	}
+}
+
+
+78.Program Output:
+----------------
+Quick Sort Example: 
+3 4 13 23 34 43 49 55 66 77 87 
+
+--------------------------------------------------
+79.Selection Sort
+--------------------------------------------------
+
+public class SlectionSort {
+
+	public static int[] selectionSort(int[] arry){
+        
+        for (int i = 0; i < arry.length - 1; i++)
+        {
+            int index = i;
+            for (int j = i + 1; j < arry.length; j++)
+                if (arry[j] < arry[index])
+                    index = j;
+      
+            int smallerNumbr = arry[index]; 
+            arry[index] = arry[i];
+            arry[i] = smallerNumbr;
+        }
+        return arry;
+    }
+     
+    public static void main(String args[]){
+         
+        int[] arry1 = {23,65,4,77,80,27,17,99,18};
+        int[] arry2 = selectionSort(arry1);
+        System.out.println("Selection Sort Demo:");
+        for(int i:arry2){
+            System.out.print(i);
+            System.out.print(" ");
+        }
+    }
+
+}
+
+
+79.Program Output:
+----------------
+Selection Sort Demo: 
+4 17 18 23 27 65 77 80 99 
+
+--------------------------------------------------
+80.Insertion Sort
+--------------------------------------------------
+
+public class InsertionSort {
+
+	public static void main(String args[]){
+        int[] arry1 = {55,12,43,27,54,34,77,3,15,19};
+        int[] arry2 = insertionSort(arry1);
+        System.out.println("Insertion Sort Demo:");
+        for(int i:arry2){
+            System.out.print(i);
+            System.out.print(" ");
+        }
+    }
+     
+    public static int[] insertionSort(int[] arr){
+         
+        int temp;
+        for (int i = 1; i < arr.length; i++) {
+            for(int j = i ; j > 0 ; j--){
+                if(arr[j] < arr[j-1]){
+                    temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+    
+}
+
+
+80.Program Output:
+----------------
+Insertion Sort Demo: 
+3 12 15 19 27 34 43 54 55 77 
+
+--------------------------------------------------
+81.Create New File in Specified Path
+--------------------------------------------------
+
+import java.io.File;
+import java.io.IOException;
+
+public class CreateNewFile {
+
+	public static void main(String[] args) {
+		try {
+			File file = new File("d:/sampleFile.txt");
+			if(file.createNewFile())
+				System.out.println("File creation successfull");
+			else
+				System.out.println
+				("Error while creating File, file already exists in specified path");
+		}
+		catch(IOException io) {
+			io.printStackTrace();
+		}
+	}
+
+}
+
+
+
+81.Program Output:
+----------------
+File creation successfull 
+
+--------------------------------------------------
+82.Rename File in specified path
+--------------------------------------------------
+
+import java.io.File;
+
+public class FileRename {
+
+	public static void main(String[] args) {
+
+		File oldFile = new File("d:/sampleFile.txt");
+		File newFile = new File("d:/sampleFileNew.txt");
+		if(oldFile.renameTo(newFile))
+			System.out.println("File Rename successfull");
+		else
+			System.out.println
+			("Error while Renaming a File");
+	}
+
+}
+
+
+82.Program Output:
+----------------
+File Rename successfull 
+
+--------------------------------------------------
+83.File Read and Write Operation
+--------------------------------------------------
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileReadWriteOperation {
+
+	public static void main(String[] args) {
+
+		try {
+			//Create a instance of File class by specifying the existing file name with path
+			File file = new File("d:/sampleFileNew.txt");
+
+			//Create a instance of BufferedWriter Class to write data to the file
+			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+			bw.write("Data in the File: AAA BBB CCC DDD\n");
+			bw.close();
+
+			//Create a instance of BufferedReader Class to read data from file
+			BufferedReader in = new BufferedReader(new FileReader(file));
+			String dataInFile;
+			while ((dataInFile = in.readLine()) != null) {
+				System.out.println(dataInFile);
+			}
+			in.close();
+		} catch (IOException e) {
+			System.out.println("IOException :"+ e);
+		}
+	}
+
+}
+
+
+
+83.Program Output:
+----------------
+Data in the File: AAA BBB CCC DDD
+
+--------------------------------------------------
+84.File Delete Operation
+--------------------------------------------------
+
+import java.io.File;
+
+public class FileDeleteOperation {
+
+	public static void main(String[] args) {
+		//Create a instance of File class by specifying the existing file name with path
+		File file = new File("d:/sampleFileNew.txt");
+		if(file.delete()) {
+			System.out.println("File "+file+ " Deleted Successfully");
+		} else {
+			System.out.println("File doesnt exist in specified path");
+		}
+	}
+}
+
+
+
+84.Program Output:
+----------------
+File d:\sampleFileNew.txt Deleted Successfully
+
+--------------------------------------------------
+85.Garbage Collection Example
+--------------------------------------------------
+
+public class GarbageCollection {
+	
+	public static void main(String s[]) throws Exception  {
+	      Runtime rs =  Runtime.getRuntime();
+	      System.out.println("Free memory in JVM before Garbage Collection = "+rs.freeMemory());
+	      rs.gc();
+	      System.out.println("Free memory in JVM after Garbage Collection = "+rs.freeMemory());
+	   }
+}
+
+
+85.Program Output:
+----------------
+Free memory in JVM before Garbage Collection = 62767488 
+Free memory in JVM after Garbage Collection = 62854120 
+
+--------------------------------------------------
+86.Get IP Address in java
+--------------------------------------------------
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class GetIPAddress {
+
+	public static void main(String[] args) throws UnknownHostException {
+		System.out.println(InetAddress.getLocalHost());
+	}
+}
+
+86.Program Output:
+----------------
+AK-PC/192.168.22.34 
+
+--------------------------------------------------
+87.Multiplicability of two Matrices
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class MultiplicabilityMatrix {
+	
+    public static void main(String args[])
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the no of rows and cols of first matrix:\n ");
+
+        int row1 = scanner.nextInt();
+
+        int col1 = scanner.nextInt();
+
+        System.out.println("Enter the  no of rows and cols of second matrix:\n ");
+
+        int row2 = scanner.nextInt();
+
+        int col2 = scanner.nextInt();
+
+        if(col1 == row2){
+            System.out.println("Two Matrices are multiplicable");
+        }
+        else{
+            System.out.println("Two Matrices are not multiplicable");
+        }
+        scanner.close();
+    }
+}
+
+
+
+87.Program Output:
+----------------
+ 
+Enter the no of rows and cols of first matrix: 
+2 
+3 
+Enter the  no of rows and cols of second matrix: 
+3 
+2 
+Two Matrices are multiplicable 
+
+--------------------------------------------------
+88.Year is leap year or not 
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class LeapYear {
+
+	public static void main(String[] args) { 
+		System.out.println("Enter Year:");
+		Scanner input = new Scanner(System.in);
+		int year = input.nextInt();
+
+		boolean isLeapYear;
+
+		// divisible by 4
+		isLeapYear = (year % 4 == 0);
+
+		// divisible by 4 and not 100
+		isLeapYear = isLeapYear && (year % 100 != 0);
+
+		// divisible by 4 and not 100 or divisible by 400
+		isLeapYear = isLeapYear || (year % 400 == 0);
+
+		if(isLeapYear){
+			System.out.println("Leap Year");
+		} else{
+			System.out.println("Not a Leap Year");
+		}
+
+	}
+
+}
+
+
+
+88.Program Output:
+----------------
+ 
+Enter Year: 
+2015 
+Not a Leap Year 
+
+--------------------------------------------------
+89.Simple Calculator
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class Calculator {
+
+	public static void main(String[] args) 
+	{
+		int num1;
+		int num2;
+		String operation;
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("please enter the first number");
+		num1 = scanner.nextInt();
+
+		System.out.println("please enter the second number");
+		num2 = scanner.nextInt();
+
+		Scanner operator = new Scanner(System.in);
+
+		System.out.println("Please enter operation");
+		operation = operator.next();
+
+		if (operation.equals("+")){
+			System.out.println("Addition: "+num1+" + "+num2+" = " + (num1 + num2));
+		}
+		if  (operation.equals("-")){
+			System.out.println("Difference: "+num1+" - "+num2+" = "  + (num1 - num2));
+		}
+
+		if (operation.equals("/")){
+			System.out.println("Division: "+num1+" / "+num2+" = "  + (num1 / num2));
+		}
+		if (operation.equals("*")){
+			System.out.println("Multiplication: "+num1+" / "+num2+" = "  + (num1 * num2));
+		}
+
+	}
+}
+
+
+
+
+89.Program Output:
+----------------
+ 
+please enter the first number 
+20 
+please enter the second number 
+10 
+Please enter operation 
+- 
+Difference: 20 - 10 = 10 
+
+--------------------------------------------------
+90.Array Intersection
+--------------------------------------------------
+
+import java.util.Scanner;
+
+public class IntersectionOfArray {
+
+	public static void main(String a[]){
+
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter first array size:");
+		int arSize1 = input.nextInt();
+		int arr1[]= new int[arSize1];
+		System.out.println("Enter elements of first array:");
+		for(int i=0;i<arSize1;i++){
+			arr1[i]=input.nextInt();
+		}
+		
+		System.out.println("Enter second array size:");
+		int arSize2 = input.nextInt();
+		int arr2[]= new int[arSize2];
+		System.out.println("Enter elements of first array:");
+		for(int i=0;i<arSize2;i++){
+			arr2[i]=input.nextInt();
+		}
+		
+		System.out.println("Intersection of two arrays: \n");
+		for(int i=0;i<arr1.length;i++){
+			for(int j=0;j<arr2.length;j++){
+				if(arr1[i]==arr2[j]){
+					System.out.println(arr1[i]);
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+90.Program Output:
+----------------
+ 
+Enter first array size: 
+4 
+Enter elements of first array: 
+1 2 3 4 
+Enter second array size: 
+5 
+Enter elements of first array: 
+1 2 5 6 3 
+Intersection of two arrays:  
+ 
+1 
+2 
+3  
+
+--------------------------------------------------
+91.Distinct Elements in Array
+--------------------------------------------------
+
+
+import java.util.Scanner;
+
+public class DistinctElementsInArray {
+
+	public static void main(String a[]){
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter array size:");
+		int arSize1 = input.nextInt();
+		int arr1[]= new int[arSize1];
+		System.out.println("Enter elements of array:");
+		for(int i=0;i<arSize1;i++){
+			arr1[i]=input.nextInt();
+		}
+		boolean distinct=false;
+		System.out.println("Distinct Elements in Array:");
+		for(int i=0;i<arr1.length;i++){
+			distinct=true;
+			for(int j=i+1;j<arr1.length;j++){
+				if(arr1[i]==arr1[j]){
+					distinct=false;
+					break;
+				}
+			}
+			if(distinct){
+				System.out.println(arr1[i]);
+			}
+		}
+	}
+
+}
+
+
+
+
+91.Program Output:
+----------------
+ 
+Enter array size: 
+5 
+Enter elements of array: 
+1 
+3 
+2 
+2 
+5 
+Distinct Elements in Array: 
+1 
+3 
+2 
+5   
+
+--------------------------------------------------
+92.Nested Switch Case
+--------------------------------------------------
+
+
+
+public class NestedSwitch {
+
+	public static void main(String[] args) {
+
+		int i=0;
+		int j=1;
+
+		switch(i){
+			case 0:
+				System.out.println("Inside switch case 0");
+	
+				switch(j){
+					case 0:
+						System.out.println("Inside nested switch case 0");
+						break;
+					case 1:
+						System.out.println("Inside nested switch case 1");
+						break;
+				}
+				break;
+			default:
+				System.out.println("Inside switch case 1");
+				break;
+		}
+	}
+
+}
+
+
+
+
+
+92.Program Output:
+----------------
+ 
+Inside switch case 0 
+Inside nested switch case 1   
+
+--------------------------------------------------
+93.             
+--------------------------------------------------
+
+             
+
+93.Program Output:
+----------------
+              
+
+

@@ -1,78 +1,66 @@
-// Program to perform Heap Sort in C
-#include <iostream> 
-using namespace std; 
+//------ AI Programming ---------
+// Heap Sort Algorithm
+// Join our underground coding movement @freecodecs (c) June, 2019.
 
-// Function to swap the the position of two elements
-void swap(int *a, int *b) 
+#include <iostream>
+using namespace std;
+
+void max_heapify(int *a, int i, int n)
 {
-  int temp = *a;
-  *a = *b;
-  *b = temp;
+	int j, temp;
+	temp = a[i];
+	j = 2 * i;
+	while (j <= n)
+	{
+		if (j < n && a[j + 1] > a[j])
+			j = j + 1;
+		if (temp > a[j])
+			break;
+		else if (temp <= a[j])
+		{
+			a[j / 2] = a[j];
+			j = 2 * j;
+		}
+	}
+	a[j / 2] = temp;
+	return;
 }
-
-void heapify(int arr[], int n, int i) 
+void heapsort(int *a, int n)
 {
-  int largest = i;
-  int left = 2 * i + 1;
-  int right = 2 * i + 2;
-
-  // check if left node is larger then i 
-  if (left < n && arr[left] > arr[largest])
-    largest = left;
-
-  // check if right node is larger then i 
-  if (right < n && arr[right] > arr[largest])
-    largest = right;
-
-  // Swap and heapify
-  if (largest != i) 
-  {
-    swap(&arr[i], &arr[largest]);
-    heapify(arr, n, largest);
-  }
+	int i, temp;
+	for (i = n; i >= 2; i--)
+	{
+		temp = a[i];
+		a[i] = a[1];
+		a[1] = temp;
+		max_heapify(a, 1, i - 1);
+	}
 }
-
-void heapSort(int arr[], int n) 
+void build_maxheap(int *a, int n)
 {
-  // Build max-heap
-  for (int i = n / 2 - 1; i >= 0; i--)
-    heapify(arr, n, i);
-
-  for (int i = n - 1; i >= 0; i--) 
-  {
-    //Move the root node at the end
-    swap(&arr[0], &arr[i]);
-
-    //Heapify the remaining tree
-    heapify(arr, i, 0);
-  }
+	int i;
+	for (i = n / 2; i >= 1; i--)
+	{
+		max_heapify(a, i, n);
+	}
 }
-
-// Print an array
-void printArray(int arr[], int n) 
+int main()
 {
-  for (int i = 0; i < n; ++i)
-    cout<<arr[i]<<" ";
-  cout<<endl;
-}
-
-
-int main() 
-{
-  int n;
-  cout<<"Enter size of array : ";
-  cin>>n;
-  int arr[n];
-  int i;
-  cout<< "Enter array elements one by one : ";
-  for(i=0; i<n; i++)
-  {
-    cin>>arr[i];
-  }
-
-  heapSort(arr, n);
-
-  cout<< "Array after heap-sort : ";
-  printArray(arr, n);
-  return 0;
+	int n, i, x;
+	cout << "Enter size of elements: ";
+	cin >> n;
+	int a[n];
+	for (i = 1; i <= n; i++)
+	{
+		cout << "\n Enter Element " <<i;
+		cin >> a[i];
+	}
+	build_maxheap(a, n);
+	heapsort(a, n);
+	cout << "\n Sorted elements are: ";
+	for (i = 1; i <= n; i++)
+	{
+		cout << a[i] <<", ";
+	}
+	return 0;
 }
