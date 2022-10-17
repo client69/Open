@@ -1,26 +1,36 @@
-#include <bits/stdc++.h>
-using namespace std;
-int gcd(int a,int b)
-{
-    if(b==0)
-    {
-        return a;
-    }
-    else
-    {
-        return gcd(b,a%b);
-    }
-}
-
+#include<stdio.h>
+int gcd(int a,int b);
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    cout<<gcd(12,18);
-
-
-
-    return 0;
+	int a,b,res;
+	scanf("%d %d",&a,&b);
+	res=gcd(a,b);
+	printf("gcd is %d",res);
 }
-
+int gcd(int a,int b)
+{
+	int res=0,i;
+	if(a>b)
+	{
+		for(i=1;i<=a;i++)
+		{
+			if(a%i==0)
+			{
+				if(b%i==0)
+					res=i;
+			}
+		}
+	}
+	else
+	{
+		for(i=1;i<=b;i++)
+		{
+			if(a%i==0)
+			{
+				if(b%i==0)
+					res=i;
+			}
+		}
+	}
+	return res;
+}
